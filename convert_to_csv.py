@@ -3,7 +3,6 @@
 
 import json
 import csv
-import xml.etree.ElementTree as ET
 from pathlib import Path
 from collections import defaultdict
 
@@ -34,34 +33,21 @@ def get_reference_text(taisir_variants, surah, verse):
 
 
 def load_cairo_arabic():
-    """Load Arabic text from Cairo Quran XML."""
-    xml_path = Path(__file__).parent.parent / "corpus-coranicum-tei/data/cairo_quran/cairoquran.xml"
+    """Load Arabic text from Cairo Quran JSON."""
+    json_path = Path(__file__).parent / "cairo_quran.json"
     
-    if not xml_path.exists():
+    if not json_path.exists():
+        print(f"Warning: Cairo Quran data not found at {json_path}")
         return {}
     
-    tree = ET.parse(xml_path)
-    root = tree.getroot()
-    ns = {'tei': 'http://www.tei-c.org/ns/1.0', 'xml': 'http://www.w3.org/XML/1998/namespace'}
+    with open(json_path, 'r', encoding='utf-8') as f:
+        cairo_data = json.load(f)
     
     arabic_text = {}
-    for verse in root.findall('.//tei:lg', ns):
-        verse_id = verse.get('{http://www.w3.org/XML/1998/namespace}id')
-        if not verse_id or not verse_id.startswith('verse-'):
-            continue
-        if verse_id.startswith('transcribed-verse-'):
-            continue
-        
-        parts = verse_id.replace('verse-', '').split('-')
-        surah, verse_num = int(parts[0]), int(parts[1])
-        
-        words = {}
-        for w in verse.findall('.//tei:w', ns):
-            w_id = w.get('{http://www.w3.org/XML/1998/namespace}id')
-            if w_id and w_id.startswith('w-'):
-                word_pos = int(w_id.split('-')[-1])
-                words[word_pos] = w.text.strip() if w.text else ''
-        
+    for verse in cairo_data['verses']:
+        surah = verse['surah']
+        verse_num = verse['verse']
+        words = {str(w['position']): w['arabic'] for w in verse['words']}
         arabic_text[(surah, verse_num)] = words
     
     return arabic_text
@@ -124,7 +110,7 @@ def convert_to_csv():
             # Process each word in reference
             for word_num in sorted(reference.keys(), key=int):
                 ref_word = reference[word_num]
-                arabic_word = arabic_words.get(int(word_num), '')
+                arabic_word = arabic_words.get(word_num, '')
                 row = [surah, verse, word_num, ref_word, arabic_word]
                 
                 # For each reciter

@@ -19,6 +19,16 @@ This repository provides:
 
 The Corpus Coranicum project provides an invaluable TEI XML export of Quranic variants, but the source attribution fields are empty in their GitHub repository. This scraper extracts the complete data directly from their website, preserving the critical source information that scholars need.
 
+### Why ad-Dānī's at-Taisīr?
+
+The CSV dataset focuses exclusively on **ad-Dānī's *at-Taisīr fī l-qirāʾāt as-sabʿ*** for two important reasons:
+
+1. **Authenticity**: It is the most authoritative and widely-accepted source for the seven canonical readings, compiled by the renowned scholar Abū ʿAmr ad-Dānī (d. 1053 CE).
+
+2. **Completeness**: It is the only source in Corpus Coranicum that provides **complete coverage** of all 6,236 verses of the Quran. Other sources (al-Bannāʾ, Abū Ḥayyān, etc.) offer only partial coverage of specific verses or chapters.
+
+The full JSON dataset (`all_variants_fixed.json`) includes all sources from Corpus Coranicum for researchers who need the additional variant readings.
+
 ## 🎯 The Seven Canonical Reciters
 
 According to ad-Dānī's *at-Taisīr fī l-qirāʾāt as-sabʿ* (11th century CE), the seven canonical reciters and their transmitters are:
@@ -44,6 +54,7 @@ According to ad-Dānī's *at-Taisīr fī l-qirāʾāt as-sabʿ* (11th century CE
   - al-Bannāʾ: *Itḥāf fuḍalāʾ al-bašar*
   - Abū Ḥayyān: *al-Baḥr al-muḥīṭ*
   - And others
+- **Reference text**: Cairo 1924 Quran (Ḥafṣ reading) included as `cairo_quran.json`
 
 ## 🔤 Transliteration Scheme
 
@@ -125,9 +136,45 @@ The dataset uses the **Corpus Coranicum transliteration system**, a scholarly st
 - **Transmitter columns**: Filled when transmitters disagree
 - **Empty cells**: Reading matches the reference (Ḥafṣ)
 
+### Cairo Quran Reference (`cairo_quran.json`)
+
+The Cairo 1924 Quran text (Ḥafṣ reading) is provided as a standalone reference:
+
+```json
+{
+  "source": "Cairo 1924 Quran (Corpus Coranicum TEI XML)",
+  "edition": "King Fuʾād edition, Amīrī Press, Būlāq (Cairo), 1924",
+  "reading": "Ḥafṣ ʿan ʿĀṣim",
+  "orthography": "rasm ʿuṯmānī (Uthmanic script)",
+  "total_verses": 6236,
+  "verses": [
+    {
+      "surah": 1,
+      "verse": 1,
+      "words": [
+        {
+          "position": 1,
+          "transliteration": "bi-smi",
+          "arabic": "بِسۡمِ"
+        },
+        {
+          "position": 2,
+          "transliteration": "llāhi",
+          "arabic": "ٱللَّهِ"
+        }
+      ]
+    }
+  ]
+}
+```
+
+This file is extracted from the Corpus Coranicum TEI XML and provides both transliteration and Arabic text for all 6,236 verses. **This makes the repository self-contained** - no external files are needed for data processing or validation.
+
 ## 🚀 Quick Start
 
 ### Prerequisites
+
+This repository is **self-contained** and does not require access to external Corpus Coranicum files.
 
 **For scraping (optional):**
 ```bash
@@ -140,8 +187,8 @@ npx playwright install chromium
 
 **For data processing:**
 ```bash
-# Python dependencies
-pip install pytest  # for running tests
+# Python dependencies (handled by uv)
+# No additional setup needed
 ```
 
 ### Using the Pre-scraped Data
@@ -195,7 +242,7 @@ python3 fix_variants.py
 python3 convert_to_csv.py
 
 # Run validation tests
-pytest test_variants.py -v
+uv run pytest test_variants.py -v
 ```
 
 ## 🔍 Data Quality
@@ -203,7 +250,7 @@ pytest test_variants.py -v
 The dataset includes comprehensive validation tests:
 
 ```bash
-pytest test_variants.py -v
+uv run pytest test_variants.py -v
 ```
 
 **Tests verify:**

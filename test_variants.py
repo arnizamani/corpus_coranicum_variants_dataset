@@ -1,7 +1,6 @@
 import json
 import unittest
 import csv
-import xml.etree.ElementTree as ET
 from pathlib import Path
 
 with open(Path(__file__).parent / "all_variants.json") as f:
@@ -120,35 +119,21 @@ class TestVariantsStructure(unittest.TestCase):
     def test_csv_reference_matches_cairo_xml(self):
         """CSV reference text (column 4) should match Cairo Quran XML transliteration."""
         csv_path = Path(__file__).parent / "taisir_variants.csv"
-        xml_path = Path(__file__).parent.parent / "corpus-coranicum-tei/data/cairo_quran/cairoquran.xml"
+        cairo_path = Path(__file__).parent / "cairo_quran.json"
         
-        if not xml_path.exists():
-            self.skipTest(f"Cairo XML not found at {xml_path}")
+        if not cairo_path.exists():
+            self.skipTest(f"Cairo Quran data not found at {cairo_path}")
         
-        # Parse Cairo XML
-        tree = ET.parse(xml_path)
-        root = tree.getroot()
-        ns = {
-            'tei': 'http://www.tei-c.org/ns/1.0',
-            'xml': 'http://www.w3.org/XML/1998/namespace'
-        }
+        # Load Cairo Quran data
+        with open(cairo_path, 'r', encoding='utf-8') as f:
+            cairo_data = json.load(f)
         
+        # Build lookup dictionary
         cairo_text = {}
-        for verse in root.findall('.//tei:lg', ns):
-            verse_id = verse.get('{http://www.w3.org/XML/1998/namespace}id')
-            if not verse_id or not verse_id.startswith('transcribed-verse-'):
-                continue
-            
-            parts = verse_id.replace('transcribed-verse-', '').split('-')
-            surah, verse_num = int(parts[0]), int(parts[1])
-            
-            words = {}
-            for w in verse.findall('.//tei:w[@type="word_cc"]', ns):
-                w_id = w.get('{http://www.w3.org/XML/1998/namespace}id')
-                if w_id and w_id.startswith('transcribed-w-'):
-                    word_pos = int(w_id.split('-')[-1])
-                    words[word_pos] = w.text.strip()
-            
+        for verse in cairo_data['verses']:
+            surah = verse['surah']
+            verse_num = verse['verse']
+            words = {str(w['position']): w['transliteration'] for w in verse['words']}
             cairo_text[(surah, verse_num)] = words
         
         # Read CSV
@@ -159,14 +144,14 @@ class TestVariantsStructure(unittest.TestCase):
             for row in reader:
                 surah = int(row['surah'])
                 verse = int(row['verse'])
-                word_pos = int(row['word'])
+                word_pos = row['word']
                 csv_word = row['reference']
                 
                 cairo_word = cairo_text.get((surah, verse), {}).get(word_pos)
                 
                 if cairo_word is None:
-                    mismatches.append((surah, verse, word_pos, 'missing in Cairo XML', csv_word))
+                    mismatches.append((surah, verse, word_pos, 'missing in Cairo data', csv_word))
                 elif cairo_word != csv_word:
                     mismatches.append((surah, verse, word_pos, cairo_word, csv_word))
         
-        self.assertEqual(mismatches, [], f"{len(mismatches)} mismatches between CSV and Cairo XML. First 10: {mismatches[:10]}")
+        self.assertEqual(mismatches, [], f"{len(mismatches)} mismatches between CSV and Cairo Quran. First 10: {mismatches[:10]}")

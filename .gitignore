@@ -53,6 +53,7 @@ tmp/
 # Large data files (optional - uncomment if you don't want to commit data)
 # all_variants_fixed.json
 # taisir_variants.csv
+# cairo_quran.json
 
 # Raw scraped data (not needed in repo - use fixed version)
 all_variants.json

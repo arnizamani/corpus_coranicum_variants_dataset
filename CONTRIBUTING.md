@@ -67,10 +67,10 @@ pip install pytest
 
 ```bash
 # Run all validation tests
-pytest test_variants.py -v
+uv run pytest test_variants.py -v
 
 # Run specific test
-pytest test_variants.py::TestVariantsStructure::test_ayah_count -v
+uv run pytest test_variants.py::TestVariantsStructure::test_ayah_count -v
 ```
 
 ## Pull Request Process
@@ -87,7 +87,7 @@ pytest test_variants.py::TestVariantsStructure::test_ayah_count -v
 
 3. **Test your changes**:
    ```bash
-   pytest test_variants.py -v
+   uv run pytest test_variants.py -v
    ```
 
 4. **Commit your changes**:

@@ -12,6 +12,11 @@ This dataset contains word-by-word Quranic variant readings for the seven canoni
 |------|------|--------|-------------|
 | `all_variants_fixed.json` | ~25 MB | JSON | Complete dataset with all sources and quality fixes applied |
 | `taisir_variants.csv` | ~4.5 MB | CSV | Tabular format with **only ad-Dānī's at-Taisīr variants** |
+| `cairo_quran.json` | ~10 MB | JSON | Cairo 1924 Quran reference text (Ḥafṣ reading) with transliteration and Arabic |
+
+**Note**: `all_variants.json` (raw scraped data) is not published as it's an intermediate file. Use `all_variants_fixed.json` instead.
+
+**Self-Contained**: All data files are included in this repository. No external dependencies on Corpus Coranicum TEI XML files are needed.
 
 ### Code Files
 
@@ -20,6 +25,7 @@ This dataset contains word-by-word Quranic variant readings for the seven canoni
 | `scrape.js` | JavaScript | Main scraper (uses Playwright) |
 | `fix_variants.py` | Python | Data quality fixes |
 | `convert_to_csv.py` | Python | JSON to CSV converter |
+| `extract_cairo.py` | Python | Extract Cairo Quran from TEI XML |
 | `test_variants.py` | Python | Validation tests (pytest) |
 | `find_multiple_variants.py` | Python | Analysis tool for data quality |
 
