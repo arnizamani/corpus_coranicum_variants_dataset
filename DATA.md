@@ -13,6 +13,7 @@ This dataset contains word-by-word Quranic variant readings for the seven canoni
 | `all_variants_fixed.json` | ~25 MB | JSON | Complete dataset with all sources and quality fixes applied |
 | `taisir_variants.csv` | ~4.5 MB | CSV | Tabular format with **only ad-Dānī's at-Taisīr variants** |
 | `cairo_quran.json` | ~10 MB | JSON | Cairo 1924 Quran reference text (Ḥafṣ reading) with transliteration and Arabic |
+| `ayah_numbering_variants.csv` | ~11 KB | CSV | Verse ending variants across six classical counting systems |
 
 **Note**: `all_variants.json` (raw scraped data) is not published as it's an intermediate file. Use `all_variants_fixed.json` instead.
 
@@ -135,6 +136,64 @@ Result:
 - `5 ʿĀṣim` column: **empty** (transmitters disagree)
 - `5 ʿĀṣim (Šuʿba)` column: `taʿmalūna`
 - `5 ʿĀṣim (Ḥafṣ)` column: **empty** (same as reference)
+
+### Verse Numbering Variants Format
+
+The `ayah_numbering_variants.csv` file documents differences in verse division across six classical counting systems.
+
+#### The Six Counting Systems
+
+| System | Total Verses | Authority | Chain of Narration |
+|--------|--------------|-----------|-------------------|
+| **Kufi** | 6,236 | Hamzah al-Zayyat (d. 156) | From 'Ali ibn Abi Talib (d. 40) |
+| **Madani 1** | 6,214 | Nafi' (d. 169) | From Abu Jafar Yazid (d. 128) via Isma'il ibn Jafar |
+| **Madani 2** | 6,217 | Nafi' (d. 169) | From Abu Jafar Yazid (d. 128) via Kufi scholars |
+| **Makki** | 6,210 | Ibn Kathir (d. 120) | From Mujahid from Ibn 'Abbas from Ubay ibn Ka'b |
+| **Basri** | 6,204 | 'Ata ibn Yasar (d. 102) | Via Asim al-Jahdari from Ayub ibn al-Mutawakkil |
+| **Shami** | 6,226 | Ibn 'Amir (d. 118) | From Abu al-Darda', attributed to 'Uthman ibn 'Affan |
+
+The Kufi system (6,236 verses) is used as the reference in this dataset and aligns with modern Hafs numbering.
+
+#### Columns
+
+1. **surah**: Surah number (1-114)
+2. **verse**: Verse number (Kufi/Hafs reference numbering)
+3. **word_position**: Position of the word where the variant occurs
+4. **madani1**: Madani 1st system (`+1` = verse break, `-1` = no verse break)
+5. **madani2**: Madani 2nd system
+6. **makki**: Makki system
+7. **basari**: Basri system
+8. **shami**: Shami system
+9. **kufi**: Kufi system (reference)
+
+#### Value Meanings
+
+- **+1**: This system considers this location a verse ending
+- **-1**: This system does NOT consider this location a verse ending
+
+The Kufi system is used as the reference, which aligns with modern Hafs numbering.
+
+#### Example
+
+```csv
+surah,verse,word_position,madani1,madani2,makki,basari,shami,kufi
+1,1,4,-1,-1,1,-1,-1,1
+```
+
+This means at Surah 1, Verse 1 (Kufi), word position 4:
+- Makki and Kufi systems: verse break exists (+1)
+- Other systems: no verse break (-1)
+
+#### Coverage
+
+- **Total variants**: 241 locations
+- **Surahs affected**: 74 out of 114
+- **Systems**: 6 classical counting traditions
+
+The differences typically involve:
+- Whether *basmala* counts as a verse
+- Division of longer passages
+- Placement of breaks in repeated phrases
 
 ## Data Sources
 

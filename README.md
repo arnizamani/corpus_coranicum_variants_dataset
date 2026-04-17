@@ -49,12 +49,47 @@ According to ad-Dānī's *at-Taisīr fī l-qirāʾāt as-sabʿ* (11th century CE
 
 - **Total verses**: 6,236 (114 surahs)
 - **Total variants**: 531,832 word entries
+- **Verse numbering variants**: 241 locations across 74 surahs
 - **Data sources**: Multiple historical works including:
   - ad-Dānī: *at-Taisīr fī l-qirāʾāt as-sabʿ* (primary source)
   - al-Bannāʾ: *Itḥāf fuḍalāʾ al-bašar*
   - Abū Ḥayyān: *al-Baḥr al-muḥīṭ*
   - And others
 - **Reference text**: Cairo 1924 Quran (Ḥafṣ reading) included as `cairo_quran.json`
+
+## 📍 Verse Numbering Systems
+
+In addition to textual variants, early Islamic scholars developed different systems for counting and dividing Quranic verses (āyāt). This dataset includes **verse ending variants** according to six classical counting systems:
+
+### The Six Counting Systems
+
+| System | Total Verses | Authority | Origin |
+|--------|--------------|-----------|--------|
+| **Kufi** | 6,236 | Hamzah al-Zayyat (d. 156 AH) | Kufa, Iraq |
+| **Madani 1** | 6,214 | Nafi' (d. 169 AH) via Isma'il ibn Jafar | Medina (first tradition) |
+| **Madani 2** | 6,217 | Nafi' (d. 169 AH) via Kufi scholars | Medina (last tradition) |
+| **Makki** | 6,210 | Ibn Kathir (d. 120 AH) | Mecca |
+| **Basri** | 6,204 | 'Ata ibn Yasar (d. 102 AH) | Basra, Iraq |
+| **Shami** | 6,226 | Ibn 'Amir (d. 118 AH) | Damascus, Syria |
+
+These systems trace back to the early Islamic period through authentic chains of narration from the Companions of the Prophet ﷺ. The Kufi system, narrated from 'Ali ibn Abi Talib (d. 40 AH), is used as the reference in this dataset and aligns with modern Hafs numbering.
+
+These systems differ in **241 locations** across **74 surahs**, where scholars disagreed on whether certain phrases constitute verse breaks. The differences typically involve:
+
+- Whether the *basmala* (بسم الله الرحمن الرحيم) counts as a verse
+- Division of longer passages into one or two verses
+- Placement of verse breaks in similar repeated phrases
+
+The **Kufi system** is used as the reference in this dataset, which closely aligns with the modern Hafs numbering. The total verse count ranges from approximately 6,204 to 6,236 depending on the system used.
+
+### Dataset: `ayah_numbering_variants.csv`
+
+This file documents all 241 locations where the six systems differ, with:
+- Surah and verse numbers (Kufi/Hafs reference)
+- Word position where the variant occurs
+- Values for each system: `+1` (verse break exists) or `-1` (no verse break)
+
+See [DATA.md](DATA.md) for detailed schema information.
 
 ## 🔤 Transliteration Scheme
 
