@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "corpus-coranicum-variants"
+version = "1.0.0"
+description = "Quranic variant readings dataset from Corpus Coranicum"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name = "Abdul Rahim Nizamani", email = "abdulrahimnizamani@gmail.com"}
+]
+keywords = ["quran", "qiraat", "variants", "corpus-coranicum", "islamic-studies"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Religion",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/arnizamani/corpus_coranicum_variants_scrapper"
+Repository = "https://github.com/arnizamani/corpus_coranicum_variants_scrapper"
+Issues = "https://github.com/arnizamani/corpus_coranicum_variants_scrapper/issues"
+
+[tool.pytest.ini_options]
+testpaths = ["test_variants.py"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]

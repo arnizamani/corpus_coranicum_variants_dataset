@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+type: dataset
+title: "Corpus Coranicum Quranic Variants Dataset"
+abstract: "A comprehensive dataset of Quranic variant readings (qirāʾāt) for the seven canonical reciters according to ad-Dānī's at-Taisīr, scraped from Corpus Coranicum with proper source attribution."
+authors:
+  - family-names: "Nizamani"
+    given-names: "Abdul Rahim"
+    email: abdulrahimnizamani@gmail.com
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+version: 1.0.0
+date-released: 2026-04-17
+url: "https://github.com/arnizamani/corpus_coranicum_variants_scrapper"
+repository-code: "https://github.com/arnizamani/corpus_coranicum_variants_scrapper"
+keywords:
+  - Quran
+  - Qiraat
+  - Quranic variants
+  - Islamic studies
+  - Corpus Coranicum
+  - Recitations
+  - Arabic linguistics
+license: MIT
+license-url: "https://opensource.org/licenses/MIT"
+references:
+  - type: website
+    title: "Corpus Coranicum"
+    authors:
+      - name: "Berlin-Brandenburg Academy of Sciences and Humanities"
+    url: "https://corpuscoranicum.de"
+    notes: "Original data source"
+  - type: book
+    title: "at-Taisīr fī l-qirāʾāt as-sabʿ"
+    authors:
+      - family-names: "ad-Dānī"
+        given-names: "Abū ʿAmr ʿUṯmān ibn Saʿīd"
+    year: 1053
+    notes: "Primary source for the seven canonical readings"
