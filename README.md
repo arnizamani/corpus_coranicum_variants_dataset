@@ -264,6 +264,22 @@ uv run pytest test_variants.py -v
 - ✅ Complete readings have no gaps
 - ✅ Reference text matches Cairo 1924 Quran
 
+### ⚠️ Important Disclaimer
+
+**Data Quality and Completeness**: The variant readings in this dataset are scraped from Corpus Coranicum and are provided as-is. While we have implemented quality checks and fixes, we cannot guarantee:
+
+1. **Accuracy**: The variants may contain errors from the source or introduced during scraping
+2. **Completeness**: Certain types of variants are **not included** in Corpus Coranicum's at-Taisīr data:
+   - **Madd variations** (vowel lengthening differences)
+   - **Hamza tashīl** (hamza softening/facilitation)
+   - Other phonetic variations that may not be represented in the transliteration
+
+**Recommendation**: For scholarly work, always verify critical readings against authoritative printed editions of at-Taisīr or other primary sources. This dataset is best used for:
+- Computational analysis and research
+- Educational purposes
+- Initial exploration of variant readings
+- Cross-referencing with primary sources
+
 ### Known Data Quality Issues
 
 The `fix_variants.py` script addresses several issues in the raw scraped data:

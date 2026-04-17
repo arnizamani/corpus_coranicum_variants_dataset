@@ -214,6 +214,26 @@ The dataset passes comprehensive validation tests (see `test_variants.py`):
 - CSV reference matches Cairo 1924 Quran transliteration
 - Total word count: 531,832 entries
 
+### ⚠️ Data Quality Disclaimer
+
+**Important Limitations**: This dataset is scraped from Corpus Coranicum and has the following limitations:
+
+1. **Accuracy Not Guaranteed**: While quality checks are implemented, errors may exist from the source or scraping process.
+
+2. **Incomplete Coverage**: The following variant types are **NOT included** in the Corpus Coranicum at-Taisīr data:
+   - **Madd variations** (differences in vowel lengthening)
+   - **Hamza tashīl/musahhal** (hamza softening/facilitation)
+   - Phonetic variations not represented in transliteration
+   - Some subtle pronunciation differences
+
+3. **Source Dependency**: The quality and completeness depend entirely on Corpus Coranicum's data.
+
+**For Scholarly Use**: Always verify critical readings against authoritative printed editions of ad-Dānī's at-Taisīr or other primary sources. This dataset is intended for:
+- Computational linguistics and digital humanities research
+- Educational and exploratory purposes
+- Cross-referencing with primary sources
+- Large-scale pattern analysis
+
 ### Known Issues and Fixes
 
 The `fix_variants.py` script addresses these issues in the raw data:
