@@ -159,12 +159,12 @@ The Kufi system (6,236 verses) is used as the reference in this dataset and alig
 1. **surah**: Surah number (1-114)
 2. **verse**: Verse number (Kufi/Hafs reference numbering)
 3. **word_position**: Position of the word where the variant occurs
-4. **madani1**: Madani 1st system (`+1` = verse break, `-1` = no verse break)
-5. **madani2**: Madani 2nd system
+4. **madani1**: Madani al-Awwal system (`+1` = verse break, `-1` = no verse break)
+5. **madani2**: Madani al-Akheer system
 6. **makki**: Makki system
-7. **basari**: Basri system
+7. **basari**: Basari system
 8. **shami**: Shami system
-9. **kufi**: Kufi system (reference)
+9. **kufi**: Kufi system (same as reference)
 
 #### Value Meanings
 
@@ -184,16 +184,15 @@ This means at Surah 1, Verse 1 (Kufi), word position 4:
 - Makki and Kufi systems: verse break exists (+1)
 - Other systems: no verse break (-1)
 
+Note that the issue of Basmala in Surah al-Fatihah is a special case. For the Makki and Kufi systems, Basmala is the first verse of Surah al-Fatihah, while others do not consider it as a verse of al-Fatihah.
+
 #### Coverage
 
 - **Total variants**: 241 locations
 - **Surahs affected**: 74 out of 114
 - **Systems**: 6 classical counting traditions
 
-The differences typically involve:
-- Whether *basmala* counts as a verse
-- Division of longer passages
-- Placement of breaks in repeated phrases
+These differences have full coverage of the Quranic text. All other positions of end-of-ayah are in complete agreement between these six systems.
 
 ## Data Sources
 

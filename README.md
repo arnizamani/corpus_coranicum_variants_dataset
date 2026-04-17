@@ -69,7 +69,7 @@ In addition to textual variants, early Islamic scholars developed different syst
 | **Madani 1** | 6,214 | Nafi' (d. 169 AH) via Isma'il ibn Jafar | Medina (first tradition) |
 | **Madani 2** | 6,217 | Nafi' (d. 169 AH) via Kufi scholars | Medina (last tradition) |
 | **Makki** | 6,210 | Ibn Kathir (d. 120 AH) | Mecca |
-| **Basri** | 6,204 | 'Ata ibn Yasar (d. 102 AH) | Basra, Iraq |
+| **Basari** | 6,204 | 'Ata ibn Yasar (d. 102 AH) | Basra, Iraq |
 | **Shami** | 6,226 | Ibn 'Amir (d. 118 AH) | Damascus, Syria |
 
 These systems trace back to the early Islamic period through authentic chains of narration from the Companions of the Prophet ﷺ. The Kufi system, narrated from 'Ali ibn Abi Talib (d. 40 AH), is used as the reference in this dataset and aligns with modern Hafs numbering.
