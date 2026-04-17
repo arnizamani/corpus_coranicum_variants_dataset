@@ -35,9 +35,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/arnizamani/corpus_coranicum_variants_scrapper"
-Repository = "https://github.com/arnizamani/corpus_coranicum_variants_scrapper"
-Issues = "https://github.com/arnizamani/corpus_coranicum_variants_scrapper/issues"
+Homepage = "https://github.com/arnizamani/corpus_coranicum_variants_dataset"
+Repository = "https://github.com/arnizamani/corpus_coranicum_variants_dataset"
+Issues = "https://github.com/arnizamani/corpus_coranicum_variants_dataset/issues"
 
 [tool.pytest.ini_options]
 testpaths = ["test_variants.py"]

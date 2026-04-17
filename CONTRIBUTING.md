@@ -8,7 +8,7 @@ Thank you for your interest in contributing! This document provides guidelines f
 
 If you find any problems with the data or code:
 
-- Check if the issue already exists in the [Issues](https://github.com/arnizamani/corpus_coranicum_variants_scrapper/issues) section
+- Check if the issue already exists in the [Issues](https://github.com/arnizamani/corpus_coranicum_variants_dataset/issues) section
 - If not, create a new issue with:
   - Clear title and description
   - Steps to reproduce (if applicable)
@@ -53,8 +53,8 @@ python3 --version  # Should be >= 3.7
 
 ```bash
 # Clone the repository
-git clone https://github.com/arnizamani/corpus_coranicum_variants_scrapper.git
-cd corpus_coranicum_variants_scrapper
+git clone https://github.com/arnizamani/corpus_coranicum_variants_dataset.git
+cd corpus_coranicum_variants_dataset
 
 # Install Node.js dependencies
 npm install

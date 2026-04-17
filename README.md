@@ -312,7 +312,7 @@ If you use this dataset in your research, please cite:
   author={Abdul Rahim Nizamani},
   year={2026},
   publisher={GitHub},
-  url={https://github.com/arnizamani/corpus_coranicum_variants_scrapper}
+  url={https://github.com/arnizamani/corpus_coranicum_variants_dataset}
 }
 ```
 

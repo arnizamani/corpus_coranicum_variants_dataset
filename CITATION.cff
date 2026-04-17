@@ -10,8 +10,8 @@ authors:
     orcid: "https://orcid.org/0000-0000-0000-0000"
 version: 1.0.0
 date-released: 2026-04-17
-url: "https://github.com/arnizamani/corpus_coranicum_variants_scrapper"
-repository-code: "https://github.com/arnizamani/corpus_coranicum_variants_scrapper"
+url: "https://github.com/arnizamani/corpus_coranicum_variants_dataset"
+repository-code: "https://github.com/arnizamani/corpus_coranicum_variants_dataset"
 keywords:
   - Quran
   - Qiraat

@@ -26,12 +26,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/arnizamani/corpus_coranicum_variants_scrapper.git"
+    "url": "https://github.com/arnizamani/corpus_coranicum_variants_dataset.git"
   },
   "bugs": {
-    "url": "https://github.com/arnizamani/corpus_coranicum_variants_scrapper/issues"
+    "url": "https://github.com/arnizamani/corpus_coranicum_variants_dataset/issues"
   },
-  "homepage": "https://github.com/arnizamani/corpus_coranicum_variants_scrapper#readme",
+  "homepage": "https://github.com/arnizamani/corpus_coranicum_variants_dataset#readme",
   "dependencies": {
     "playwright": "^1.59.1"
   },
