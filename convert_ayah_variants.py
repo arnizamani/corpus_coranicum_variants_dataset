@@ -8,25 +8,45 @@ from pathlib import Path
 import re
 
 
-def normalize_arabic(text):
-    """Normalize Arabic text for matching (remove tashkeel, normalize hamza/alif)."""
+def normalize_for_matching(text):
+    """
+    Normalize Arabic text using the same logic as match_rasm.
+    This matches the simplified orthography used in the Excel file.
+    """
     if not text:
         return ""
     
-    # Remove tashkeel (diacritics) and tatweel
-    text = re.sub(r'[\u064B-\u065F\u0670\u0640]', '', text)
+    # Remove all diacritics and special marks (comprehensive list)
+    diacritics = [
+        '\u064B', '\u064C', '\u064D', '\u064E', '\u064F', '\u0650', '\u0651', 
+        '\u0652', '\u0653', '\u0654', '\u0655', '\u0656', '\u0657', '\u0658',
+        '\u0670', '\u0640', '\u06E5', '\u06E6', '\u06E7', '\u06E8', '\u06EA',
+        '\u06EB', '\u06EC', '\u06ED', '\u08F0', '\u08F1', '\u08F2', '\u08F3',
+        '\u202F', '\u2008', '_', '\u06D6', '\u06D7', '\u06D8', '\u06D9', '\u06DA',
+        '\u06DB', '\u06DC', '\u06DD', '\u06DE', '\u06DF', '\u06E0', '\u06E1',
+        '\u06E2', '\u06E3', '\u06E4', '\u08E3', '\u08E4', '\u08E5', '\u08E6',
+        '\u08E7', '\u08E8', '\u08E9', '\u08EA', '\u08EB', '\u08EC', '\u08ED',
+        '\u08EE', '\u08EF', '\u08F4', '\u08F5', '\u08F6', '\u08F7', '\u08F8',
+        '\u08F9', '\u08FA', '\u08FB', '\u08FC', '\u08FD', '\u08FE', '\u08FF',
+        '\u0674', '\u0673'  # Hamza above and below alif
+    ]
+    for d in diacritics:
+        text = text.replace(d, '')
     
-    # Normalize alif variants
+    # Normalize ALL alif variants to simple alif (including alif wasla)
     text = text.replace('أ', 'ا').replace('إ', 'ا').replace('آ', 'ا').replace('ٱ', 'ا')
     
-    # Normalize hamza
-    text = text.replace('ء', '').replace('ؤ', 'و').replace('ئ', 'ي')
+    # Normalize hamza on waw/yeh to base letter
+    text = text.replace('ؤ', 'و').replace('ئ', 'ى')
     
-    # Normalize ya/alif maqsura
-    text = text.replace('ى', 'ي')
+    # Remove standalone hamza
+    text = text.replace('ء', '')
     
-    # Normalize taa marbuta
+    # Normalize teh marbuta to heh
     text = text.replace('ة', 'ه')
+    
+    # Normalize yeh variants to alif maqsura
+    text = text.replace('ي', 'ى').replace('ی', 'ى')
     
     # Remove spaces
     text = text.replace(' ', '')
@@ -34,70 +54,101 @@ def normalize_arabic(text):
     return text
 
 
-def find_word_position(surah, words_text, cairo_data):
-    """Find the verse and word position for the given Arabic text."""
-    normalized_search = normalize_arabic(words_text)
+def find_word_position_precise(surah, words_text, cairo_data):
+    """Find the verse and word position using precise matching."""
+    normalized_search = normalize_for_matching(words_text)
     
-    # Get all verses for this surah
+    # Special case: if search starts with "الرحيم" (from basmala), remove it
+    # and only search for the rest at the beginning of the surah
+    basmala_word = normalize_for_matching('الرحيم')
+    if normalized_search.startswith(basmala_word):
+        normalized_search = normalized_search[len(basmala_word):]
+        # Only match at the very beginning of the surah (verse 1)
+        surah_verses = [v for v in cairo_data['verses'] if v['surah'] == surah and v['verse'] == 1]
+        if surah_verses:
+            verse = surah_verses[0]
+            first_word_normalized = normalize_for_matching(verse['words'][0]['arabic'])
+            if first_word_normalized == normalized_search:
+                return [{
+                    'verse': 1,
+                    'word_position': verse['words'][0]['position'],
+                    'matched_text': verse['words'][0]['arabic']
+                }]
+        return []
+    
+    # Get all verses for this surah and build continuous text
     surah_verses = [v for v in cairo_data['verses'] if v['surah'] == surah]
     
-    best_match = None
-    best_score = 0
-    
+    # Build a flat list of all words in the surah with their verse info
+    all_words = []
     for verse in surah_verses:
-        verse_num = verse['verse']
-        verse_words = verse['words']
-        
-        # Build full verse text
-        full_verse = normalize_arabic(''.join([w['arabic'] for w in verse_words]))
-        
-        # Check if search text appears in verse
-        if normalized_search in full_verse:
-            # Find which word contains the end of the search phrase
-            pos = full_verse.find(normalized_search)
-            end_pos = pos + len(normalized_search)
-            
-            # Count characters to find word position
-            char_count = 0
-            for word in verse_words:
-                word_text = normalize_arabic(word['arabic'])
-                char_count += len(word_text)
-                if char_count >= end_pos:
-                    return {
-                        'verse': verse_num,
-                        'word_position': word['position'],
-                        'score': 1.0
-                    }
-        
-        # Fallback: try partial matching with windows
-        for start_idx in range(len(verse_words)):
-            for window_size in range(1, min(8, len(verse_words) - start_idx + 1)):
-                window_words = verse_words[start_idx:start_idx + window_size]
-                window_text = ''.join([normalize_arabic(w['arabic']) for w in window_words])
-                
-                # Calculate similarity
-                if normalized_search in window_text:
-                    score = len(normalized_search) / len(window_text)
-                elif window_text in normalized_search:
-                    score = len(window_text) / len(normalized_search)
-                else:
-                    # Check overlap
-                    overlap = 0
-                    for i in range(min(len(normalized_search), len(window_text))):
-                        if i < len(normalized_search) and i < len(window_text):
-                            if normalized_search[i] == window_text[i]:
-                                overlap += 1
-                    score = overlap / max(len(normalized_search), len(window_text))
-                
-                if score > best_score:
-                    best_score = score
-                    best_match = {
-                        'verse': verse_num,
-                        'word_position': window_words[-1]['position'],
-                        'score': score
-                    }
+        for word in verse['words']:
+            all_words.append({
+                'verse': verse['verse'],
+                'position': word['position'],
+                'arabic': word['arabic'],
+                'normalized': normalize_for_matching(word['arabic'])
+            })
     
-    return best_match
+    # Build full surah text once
+    full_text = ''.join([w['normalized'] for w in all_words])
+    
+    matches = []
+    
+    # Find all occurrences of the search text
+    search_positions = []
+    
+    # Try exact match
+    pos = full_text.find(normalized_search)
+    while pos != -1:
+        search_positions.append((pos, pos + len(normalized_search), 'exact'))
+        pos = full_text.find(normalized_search, pos + 1)
+    
+    # Try match without alifs if no exact match and search is long enough
+    if not search_positions and len(normalized_search.replace('ا', '')) > 3:
+        search_no_alif = normalized_search.replace('ا', '')
+        text_no_alif = full_text.replace('ا', '')
+        
+        pos = text_no_alif.find(search_no_alif)
+        while pos != -1:
+            # Map back to original position
+            orig_pos = 0
+            no_alif_count = 0
+            for i, c in enumerate(full_text):
+                if c != 'ا':
+                    if no_alif_count == pos:
+                        orig_pos = i
+                        break
+                    no_alif_count += 1
+            
+            # Find end position
+            end_pos = orig_pos
+            chars_found = 0
+            for i in range(orig_pos, len(full_text)):
+                if full_text[i] != 'ا':
+                    chars_found += 1
+                    if chars_found == len(search_no_alif):
+                        end_pos = i + 1
+                        break
+            
+            search_positions.append((orig_pos, end_pos, 'no_alif'))
+            pos = text_no_alif.find(search_no_alif, pos + 1)
+    
+    # Convert positions to word indices
+    for start_pos, end_pos, match_type in search_positions:
+        # Find which word the end position falls in
+        char_count = 0
+        for idx, word in enumerate(all_words):
+            char_count += len(word['normalized'])
+            if char_count >= end_pos:
+                matches.append({
+                    'verse': word['verse'],
+                    'word_position': word['position'],
+                    'matched_text': ''.join([w['arabic'] for w in all_words[max(0, idx-2):idx + 1]])
+                })
+                break
+    
+    return matches
 
 
 def convert_to_csv():
@@ -120,6 +171,8 @@ def convert_to_csv():
     # Prepare output
     results = []
     current_surah = None
+    skipped = []
+    used_locations = set()  # Track (surah, verse, word_pos) that have been used
     
     print("\nProcessing variants...")
     for row_num, row in enumerate(ws.iter_rows(min_row=2, values_only=True), 2):
@@ -127,19 +180,33 @@ def convert_to_csv():
         
         if surah:
             current_surah = surah
+            used_locations = set()  # Reset for new surah
         
         if not current_surah or not words:
             continue
         
         # Find word position
-        match = find_word_position(current_surah, words, cairo_data)
+        matches = find_word_position_precise(current_surah, words, cairo_data)
         
-        if not match:
-            print(f"  Warning: Could not find match for {current_surah}:{words[:30]}...")
+        if not matches:
+            print(f"  Row {row_num}: No match for {current_surah}:{words[:40]}...")
+            skipped.append((row_num, current_surah, words))
             continue
         
-        if match['score'] < 0.7:
-            print(f"  Warning: Low confidence match ({match['score']:.2f}) for {current_surah}:{match['verse']}:{words[:30]}...")
+        # Filter out already used locations
+        unused_matches = [m for m in matches if (current_surah, m['verse'], m['word_position']) not in used_locations]
+        
+        if not unused_matches:
+            print(f"  Row {row_num}: All matches already used for {current_surah}:{words[:40]}...")
+            skipped.append((row_num, current_surah, words))
+            continue
+        
+        if len(unused_matches) > 1:
+            print(f"  Row {row_num}: Multiple matches ({len(unused_matches)}) for {current_surah}:{words[:40]}, using first")
+        
+        # Use the first unused match (they're in verse order)
+        match = unused_matches[0]
+        used_locations.add((current_surah, match['verse'], match['word_position']))
         
         # Fill null values with Kufi value (agrees with reference)
         kufi_val = kufi if kufi is not None else 0
@@ -173,6 +240,12 @@ def convert_to_csv():
     
     print(f"✓ Saved to {output_path}")
     print(f"✓ Total entries: {len(results)}")
+    print(f"✓ Skipped entries: {len(skipped)}")
+    
+    if skipped:
+        print("\nSkipped entries (no unique match):")
+        for row_num, surah, words in skipped[:10]:
+            print(f"  Row {row_num}: Surah {surah}: {words[:50]}...")
     
     # Statistics
     reading_counts = {

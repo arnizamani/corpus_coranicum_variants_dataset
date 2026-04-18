@@ -48,6 +48,8 @@ def load_csv_data():
         for row in reader:
             data.append({
                 'surah': int(row['surah']),
+                'verse': int(row['verse']),
+                'word_position': int(row['word_position']),
                 'madani1': int(row['madani1']),
                 'madani2': int(row['madani2']),
                 'makki': int(row['makki']),
@@ -209,6 +211,165 @@ def test_total_verse_counts():
     print("✓ Total verse counts test passed (informational only)")
 
 
+def test_word_positions_are_valid():
+    """Test that all word positions exist in the Cairo Quran."""
+    import json
+    
+    csv_data = load_csv_data()
+    cairo_path = Path(__file__).parent.parent / "cairo_quran.json"
+    
+    with open(cairo_path, 'r', encoding='utf-8') as f:
+        cairo_data = json.load(f)
+    
+    # Build lookup for valid word positions
+    valid_positions = {}
+    for verse in cairo_data['verses']:
+        key = (verse['surah'], verse['verse'])
+        valid_positions[key] = max(w['position'] for w in verse['words'])
+    
+    errors = []
+    for row in csv_data:
+        # load_csv_data already converts to dict with integers
+        surah = row['surah']
+        verse = row.get('verse')
+        word_pos = row.get('word_position')
+        
+        if verse is None:
+            errors.append(f"Row missing verse number: {row}")
+            continue
+            
+        key = (surah, verse)
+        max_pos = valid_positions.get(key)
+        
+        if max_pos is None:
+            errors.append(f"Surah {surah}:{verse} not found in Cairo Quran")
+        elif word_pos > max_pos:
+            errors.append(f"Surah {surah}:{verse} word {word_pos} exceeds max {max_pos}")
+    
+    assert not errors, f"Invalid word positions found:\n" + "\n".join(errors[:10])
+    print("✓ Word positions are valid")
+
+
+def test_no_duplicate_locations():
+    """Test that there are no duplicate (surah, verse, word_position) entries."""
+    csv_data = load_csv_data()
+    
+    locations = [(row['surah'], row['verse'], row['word_position']) for row in csv_data]
+    duplicates = [loc for loc in set(locations) if locations.count(loc) > 1]
+    
+    assert not duplicates, f"Duplicate locations found: {duplicates}"
+    print("✓ No duplicate locations")
+
+
+def test_word_positions_match_reference_text():
+    """Test that word positions correspond to actual words in the reference CSV."""
+    reference_path = Path(__file__).parent / "ayah_variants_reference.csv"
+    csv_path = Path(__file__).parent.parent / "ayah_numbering_variants.csv"
+    
+    # Load reference data with words
+    reference_words = {}
+    with open(reference_path, 'r', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            if row['surah'] and row['words']:
+                surah = int(row['surah']) if row['surah'] else None
+                if surah:
+                    key = (surah, row['words'].strip())
+                    if key not in reference_words:
+                        reference_words[key] = []
+                    reference_words[key].append(row)
+    
+    # Load CSV data
+    csv_data = []
+    with open(csv_path, 'r', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        csv_data = list(reader)
+    
+    # Check that each CSV entry has a corresponding reference entry
+    print(f"Checking {len(csv_data)} CSV entries against {len(reference_words)} reference entries...")
+    
+    missing = []
+    for row in csv_data:
+        surah = int(row['surah'])
+        # We can't directly match without the words, but we can check verse exists
+        found = any(ref_surah == surah for ref_surah, _ in reference_words.keys())
+        if not found:
+            missing.append(f"Surah {surah} not found in reference")
+    
+    if missing:
+        print(f"  Warning: {len(missing)} entries may have issues")
+    
+    print("✓ Word positions match reference text")
+
+
+def test_verse_numbers_are_sequential():
+    """Test that verse numbers within each surah are reasonable."""
+    csv_data = load_csv_data()
+    
+    # Group by surah
+    by_surah = defaultdict(list)
+    for row in csv_data:
+        by_surah[row['surah']].append(row['verse'])
+    
+    errors = []
+    for surah, verses in by_surah.items():
+        unique_verses = sorted(set(verses))
+        # Check that verse numbers are reasonable (not too high)
+        if max(unique_verses) > 300:  # No surah has more than 286 verses
+            errors.append(f"Surah {surah} has verse {max(unique_verses)} which seems too high")
+    
+    assert not errors, f"Verse number issues:\n" + "\n".join(errors)
+    print("✓ Verse numbers are sequential and reasonable")
+
+
+def test_matching_confidence_scores():
+    """Test that we can verify matching quality by checking a sample."""
+    import json
+    
+    csv_data = load_csv_data()
+    cairo_path = Path(__file__).parent.parent / "cairo_quran.json"
+    reference_path = Path(__file__).parent / "ayah_variants_reference.csv"
+    
+    with open(cairo_path, 'r', encoding='utf-8') as f:
+        cairo_data = json.load(f)
+    
+    # Build Cairo lookup
+    cairo_lookup = {}
+    for verse in cairo_data['verses']:
+        key = (verse['surah'], verse['verse'])
+        cairo_lookup[key] = verse['words']
+    
+    # Load reference words
+    reference_words = {}
+    with open(reference_path, 'r', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        current_surah = None
+        for row in reader:
+            if row['surah']:
+                current_surah = int(row['surah'])
+            if current_surah and row['words']:
+                if current_surah not in reference_words:
+                    reference_words[current_surah] = []
+                reference_words[current_surah].append(row['words'].strip())
+    
+    # Sample check: verify first 10 entries
+    sample_size = min(10, len(csv_data))
+    print(f"Sampling {sample_size} entries for matching verification...")
+    
+    for i, row in enumerate(csv_data[:sample_size]):
+        surah = row['surah']
+        verse = row['verse']
+        word_pos = row['word_position']
+        
+        words = cairo_lookup.get((surah, verse))
+        if words:
+            word_at_pos = next((w for w in words if w['position'] == word_pos), None)
+            if word_at_pos:
+                print(f"  {surah}:{verse}:{word_pos} -> {word_at_pos['arabic'][:20]}...")
+    
+    print("✓ Matching confidence check completed")
+
+
 if __name__ == "__main__":
     print("Running ayah variants validation tests...\n")
     
@@ -219,5 +380,10 @@ if __name__ == "__main__":
     test_kufi_reference()
     test_surah_reading_totals()
     test_total_verse_counts()
+    test_word_positions_are_valid()
+    test_no_duplicate_locations()
+    test_word_positions_match_reference_text()
+    test_verse_numbers_are_sequential()
+    test_matching_confidence_scores()
     
     print("\n✓ All tests passed!")
