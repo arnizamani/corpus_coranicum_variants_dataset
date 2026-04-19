@@ -3,7 +3,6 @@
 
 import json
 import csv
-import openpyxl
 from pathlib import Path
 import re
 
@@ -15,10 +14,10 @@ def normalize_for_matching(text):
     """
     if not text:
         return ""
-    
+
     # Remove all diacritics and special marks (comprehensive list)
     diacritics = [
-        '\u064B', '\u064C', '\u064D', '\u064E', '\u064F', '\u0650', '\u0651', 
+        '\u064B', '\u064C', '\u064D', '\u064E', '\u064F', '\u0650', '\u0651',
         '\u0652', '\u0653', '\u0654', '\u0655', '\u0656', '\u0657', '\u0658',
         '\u0670', '\u0640', '\u06E5', '\u06E6', '\u06E7', '\u06E8', '\u06EA',
         '\u06EB', '\u06EC', '\u06ED', '\u08F0', '\u08F1', '\u08F2', '\u08F3',
@@ -32,32 +31,32 @@ def normalize_for_matching(text):
     ]
     for d in diacritics:
         text = text.replace(d, '')
-    
+
     # Normalize ALL alif variants to simple alif (including alif wasla)
     text = text.replace('أ', 'ا').replace('إ', 'ا').replace('آ', 'ا').replace('ٱ', 'ا')
-    
+
     # Normalize hamza on waw/yeh to base letter
     text = text.replace('ؤ', 'و').replace('ئ', 'ى')
-    
+
     # Remove standalone hamza
     text = text.replace('ء', '')
-    
+
     # Normalize teh marbuta to heh
     text = text.replace('ة', 'ه')
-    
+
     # Normalize yeh variants to alif maqsura
     text = text.replace('ي', 'ى').replace('ی', 'ى')
-    
+
     # Remove spaces
     text = text.replace(' ', '')
-    
+
     return text
 
 
 def find_word_position_precise(surah, words_text, cairo_data):
     """Find the verse and word position using precise matching."""
     normalized_search = normalize_for_matching(words_text)
-    
+
     # Special case: if search starts with "الرحيم" (from basmala), remove it
     # and only search for the rest at the beginning of the surah
     basmala_word = normalize_for_matching('الرحيم')
@@ -75,10 +74,10 @@ def find_word_position_precise(surah, words_text, cairo_data):
                     'matched_text': verse['words'][0]['arabic']
                 }]
         return []
-    
+
     # Get all verses for this surah and build continuous text
     surah_verses = [v for v in cairo_data['verses'] if v['surah'] == surah]
-    
+
     # Build a flat list of all words in the surah with their verse info
     all_words = []
     for verse in surah_verses:
@@ -89,26 +88,26 @@ def find_word_position_precise(surah, words_text, cairo_data):
                 'arabic': word['arabic'],
                 'normalized': normalize_for_matching(word['arabic'])
             })
-    
+
     # Build full surah text once
     full_text = ''.join([w['normalized'] for w in all_words])
-    
+
     matches = []
-    
+
     # Find all occurrences of the search text
     search_positions = []
-    
+
     # Try exact match
     pos = full_text.find(normalized_search)
     while pos != -1:
         search_positions.append((pos, pos + len(normalized_search), 'exact'))
         pos = full_text.find(normalized_search, pos + 1)
-    
+
     # Try match without alifs if no exact match and search is long enough
     if not search_positions and len(normalized_search.replace('ا', '')) > 3:
         search_no_alif = normalized_search.replace('ا', '')
         text_no_alif = full_text.replace('ا', '')
-        
+
         pos = text_no_alif.find(search_no_alif)
         while pos != -1:
             # Map back to original position
@@ -120,7 +119,7 @@ def find_word_position_precise(surah, words_text, cairo_data):
                         orig_pos = i
                         break
                     no_alif_count += 1
-            
+
             # Find end position
             end_pos = orig_pos
             chars_found = 0
@@ -130,10 +129,10 @@ def find_word_position_precise(surah, words_text, cairo_data):
                     if chars_found == len(search_no_alif):
                         end_pos = i + 1
                         break
-            
+
             search_positions.append((orig_pos, end_pos, 'no_alif'))
             pos = text_no_alif.find(search_no_alif, pos + 1)
-    
+
     # Convert positions to word indices
     for start_pos, end_pos, match_type in search_positions:
         # Find which word the end position falls in
@@ -147,67 +146,77 @@ def find_word_position_precise(surah, words_text, cairo_data):
                     'matched_text': ''.join([w['arabic'] for w in all_words[max(0, idx-2):idx + 1]])
                 })
                 break
-    
+
     return matches
 
 
 def convert_to_csv():
-    """Convert Excel file to CSV with word positions."""
+    """Convert variant ayah ends CSV to output CSV with word positions."""
     script_dir = Path(__file__).parent
-    excel_path = script_dir.parent / "Quran_corpus_10readings/Variant ends of ayaat.xlsx"
+    input_csv_path = script_dir / "tests/ayah_variants_reference.csv"
     cairo_path = script_dir / "cairo_quran.json"
     output_path = script_dir / "ayah_numbering_variants.csv"
-    
+
     # Load Cairo Quran data
     print("Loading Cairo Quran data...")
     with open(cairo_path, 'r', encoding='utf-8') as f:
         cairo_data = json.load(f)
-    
-    # Load Excel data
-    print("Loading Excel data...")
-    wb = openpyxl.load_workbook(excel_path)
-    ws = wb['Data']
-    
+
+    # Load input CSV data
+    print("Loading input CSV data...")
+    with open(input_csv_path, 'r', encoding='utf-8') as f:
+        reader = csv.reader(f)
+        rows = list(reader)
+
     # Prepare output
     results = []
     current_surah = None
     skipped = []
     used_locations = set()  # Track (surah, verse, word_pos) that have been used
-    
+
     print("\nProcessing variants...")
-    for row_num, row in enumerate(ws.iter_rows(min_row=2, values_only=True), 2):
-        surah_name, surah, words, madani1, madani2, makki, basari, shami, kufi = row
-        
+    for row_num, row in enumerate(rows[1:], 2):
+        if len(row) < 9:
+            continue
+        surah_name, surah, words, madani1, madani2, makki, basari, shami, kufi = row[:9]
+        surah = int(surah) if surah else None
+
+        def parse(v):
+            return int(v) if v not in ('', None) else None
+        madani1, madani2, makki, basari, shami, kufi = map(
+            parse, [madani1, madani2, makki, basari, shami, kufi]
+        )
+
         if surah:
             current_surah = surah
             used_locations = set()  # Reset for new surah
-        
+
         if not current_surah or not words:
             continue
-        
+
         # Find word position
         matches = find_word_position_precise(current_surah, words, cairo_data)
-        
+
         if not matches:
             print(f"  Row {row_num}: No match for {current_surah}:{words[:40]}...")
             skipped.append((row_num, current_surah, words))
             continue
-        
+
         # Filter out already used locations
         unused_matches = [m for m in matches if (current_surah, m['verse'], m['word_position']) not in used_locations]
-        
+
         if not unused_matches:
             print(f"  Row {row_num}: All matches already used for {current_surah}:{words[:40]}...")
             skipped.append((row_num, current_surah, words))
             continue
-        
+
         if len(unused_matches) > 1:
             print(f"  Row {row_num}: Multiple matches ({len(unused_matches)}) for {current_surah}:{words[:40]}, using first")
-        
+
         # Use the first unused match (they're in verse order)
         match = unused_matches[0]
         used_locations.add((current_surah, match['verse'], match['word_position']))
-        
+
         # Fill null values with Kufi value (agrees with reference)
         kufi_val = kufi if kufi is not None else 0
         results.append({
@@ -221,32 +230,32 @@ def convert_to_csv():
             'shami': shami if shami is not None else kufi_val,
             'kufi': kufi_val
         })
-        
+
         if row_num % 50 == 0:
             print(f"  Processed {row_num - 1} rows...")
-    
+
     # Sort by surah, verse, word_position
     results.sort(key=lambda x: (x['surah'], x['verse'], x['word_position']))
-    
+
     # Write to CSV
     print(f"\nWriting {len(results)} entries to CSV...")
     with open(output_path, 'w', encoding='utf-8', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=[
             'surah', 'verse', 'word_position',
             'madani1', 'madani2', 'makki', 'basari', 'shami', 'kufi'
-        ])
+        ], lineterminator='\n')
         writer.writeheader()
         writer.writerows(results)
-    
+
     print(f"✓ Saved to {output_path}")
     print(f"✓ Total entries: {len(results)}")
     print(f"✓ Skipped entries: {len(skipped)}")
-    
+
     if skipped:
         print("\nSkipped entries (no unique match):")
         for row_num, surah, words in skipped[:10]:
             print(f"  Row {row_num}: Surah {surah}: {words[:50]}...")
-    
+
     # Statistics
     reading_counts = {
         'madani1': sum(1 for r in results if r['madani1'] != 0),
@@ -256,7 +265,7 @@ def convert_to_csv():
         'shami': sum(1 for r in results if r['shami'] != 0),
         'kufi': sum(1 for r in results if r['kufi'] != 0)
     }
-    
+
     print("\nVariant counts (non-zero):")
     for reading, count in reading_counts.items():
         print(f"  {reading}: {count}")
