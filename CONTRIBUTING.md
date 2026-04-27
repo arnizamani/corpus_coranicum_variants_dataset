@@ -60,7 +60,7 @@ cd corpus_coranicum_variants_dataset
 npm install
 
 # Install Python dependencies
-pip install pytest
+uv sync
 ```
 
 ### Running Tests

@@ -4,7 +4,6 @@
 import json
 import csv
 from pathlib import Path
-from collections import defaultdict
 
 
 def get_reference_text(taisir_variants, surah, verse):
@@ -76,7 +75,7 @@ def convert_to_csv():
     ]
     
     with open(output_file, 'w', encoding='utf-8', newline='') as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, lineterminator='\n')
         
         # Header
         header = ['surah', 'verse', 'word', 'reference', 'reference_cairo'] + reciters + transmitters

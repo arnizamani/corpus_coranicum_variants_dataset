@@ -4,7 +4,6 @@
 import json
 import csv
 from pathlib import Path
-import re
 
 
 def normalize_for_matching(text):

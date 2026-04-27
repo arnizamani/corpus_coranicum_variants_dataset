@@ -56,7 +56,7 @@ def find_multiple_variants():
     
     # Write to CSV
     with open(output_file, 'w', encoding='utf-8', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=['surah', 'verse', 'word', 'transmitter', 'variant_count', 'variants'])
+        writer = csv.DictWriter(f, fieldnames=['surah', 'verse', 'word', 'transmitter', 'variant_count', 'variants'], lineterminator='\n')
         writer.writeheader()
         writer.writerows(cases)
     

@@ -5,11 +5,11 @@
   "main": "scrape.js",
   "scripts": {
     "scrape": "node scrape.js",
-    "fix": "python3 fix_variants.py",
-    "convert": "python3 convert_to_csv.py",
-    "test": "uv run pytest test_variants.py -v",
-    "validate": "uv run pytest test_variants.py -v",
-    "analyze": "python3 find_multiple_variants.py",
+    "fix": "uv run python fix_variants.py",
+    "convert": "uv run python convert_to_csv.py",
+    "test": "uv run pytest",
+    "validate": "uv run pytest",
+    "analyze": "uv run python find_multiple_variants.py",
     "pipeline": "npm run scrape && npm run fix && npm run convert && npm run test"
   },
   "keywords": [
