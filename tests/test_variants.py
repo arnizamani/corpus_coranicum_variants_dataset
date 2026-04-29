@@ -3,7 +3,7 @@ import unittest
 import csv
 from pathlib import Path
 
-with open(Path(__file__).parent.parent / "all_variants_fixed.json") as f:
+with open(Path(__file__).parent.parent / "data" / "all_variants_fixed.json") as f:
     data = json.load(f)
 
 # Ayah counts per surah (Hafs numbering), from scrape.js
@@ -118,8 +118,8 @@ class TestVariantsStructure(unittest.TestCase):
 
     def test_csv_reference_matches_cairo_xml(self):
         """CSV reference text (column 4) should match Cairo Quran XML transliteration."""
-        csv_path = Path(__file__).parent.parent / "taisir_variants.csv"
-        cairo_path = Path(__file__).parent.parent / "cairo_quran.json"
+        csv_path = Path(__file__).parent.parent / "data" / "taisir_variants.csv"
+        cairo_path = Path(__file__).parent.parent / "data" / "cairo_quran.json"
         
         if not cairo_path.exists():
             self.skipTest(f"Cairo Quran data not found at {cairo_path}")

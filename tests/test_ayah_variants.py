@@ -40,7 +40,7 @@ def load_reference_data():
 
 def load_csv_data():
     """Load data from CSV file."""
-    csv_path = Path(__file__).parent.parent / "ayah_numbering_variants.csv"
+    csv_path = Path(__file__).parent.parent / "data" / "ayah_numbering_variants.csv"
     
     data = []
     with open(csv_path, 'r', encoding='utf-8') as f:
@@ -216,7 +216,7 @@ def test_word_positions_are_valid():
     import json
     
     csv_data = load_csv_data()
-    cairo_path = Path(__file__).parent.parent / "cairo_quran.json"
+    cairo_path = Path(__file__).parent.parent / "data" / "cairo_quran.json"
     
     with open(cairo_path, 'r', encoding='utf-8') as f:
         cairo_data = json.load(f)
@@ -264,7 +264,7 @@ def test_no_duplicate_locations():
 def test_word_positions_match_reference_text():
     """Test that word positions correspond to actual words in the reference CSV."""
     reference_path = Path(__file__).parent / "ayah_variants_reference.csv"
-    csv_path = Path(__file__).parent.parent / "ayah_numbering_variants.csv"
+    csv_path = Path(__file__).parent.parent / "data" / "ayah_numbering_variants.csv"
     
     # Load reference data with words
     reference_words = {}
@@ -327,7 +327,7 @@ def test_matching_confidence_scores():
     import json
     
     csv_data = load_csv_data()
-    cairo_path = Path(__file__).parent.parent / "cairo_quran.json"
+    cairo_path = Path(__file__).parent.parent / "data" / "cairo_quran.json"
     reference_path = Path(__file__).parent / "ayah_variants_reference.csv"
     
     with open(cairo_path, 'r', encoding='utf-8') as f:

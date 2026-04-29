@@ -55,7 +55,7 @@ According to ad-Dānī's *at-Taisīr fī l-qirāʾāt as-sabʿ* (11th century CE
   - al-Bannāʾ: *Itḥāf fuḍalāʾ al-bašar*
   - Abū Ḥayyān: *al-Baḥr al-muḥīṭ*
   - And others
-- **Reference text**: Cairo 1924 Quran (Ḥafṣ reading) included as `cairo_quran.json`
+- **Reference text**: Cairo 1924 Quran (Ḥafṣ reading) included as `data/cairo_quran.json`
 
 ## 📍 Verse Numbering Systems
 
@@ -119,9 +119,9 @@ The dataset uses the **Corpus Coranicum transliteration system**, a scholarly st
 
 ## 📁 Data Format
 
-### JSON Structure (`all_variants_fixed.json`)
+### JSON Structure (`data/all_variants_fixed.json`)
 
-**Note**: Only `all_variants_fixed.json` is published. The raw `all_variants.json` is an intermediate file generated during scraping and is not needed.
+**Note**: Only `data/all_variants_fixed.json` is published. The raw `data/all_variants.json` is an intermediate file generated during scraping and is not needed.
 
 ```json
 {
@@ -152,7 +152,7 @@ The dataset uses the **Corpus Coranicum transliteration system**, a scholarly st
   - For complete readings: all word positions present
   - For variants: only differing words present
 
-### CSV Structure (`taisir_variants.csv`)
+### CSV Structure (`data/taisir_variants.csv`)
 
 **Note**: This CSV contains only variants from **ad-Dānī's at-Taisīr** (the seven canonical readings). Other sources in the JSON are not included.
 
@@ -171,9 +171,19 @@ The dataset uses the **Corpus Coranicum transliteration system**, a scholarly st
 - **Transmitter columns**: Filled when transmitters disagree
 - **Empty cells**: Reading matches the reference (Ḥafṣ)
 
-### Cairo Quran Reference (`cairo_quran.json`)
+### Cairo Quran Reference (`data/cairo_quran.json`)
 
-The Cairo 1924 Quran text (Ḥafṣ reading) is provided as a standalone reference:
+The Cairo 1924 Quran text (Ḥafṣ reading) is provided as a standalone reference.
+It is derived from the Corpus Coranicum TEI XML and then **verified word-by-word
+against a hand-verified Madinah mushaf**, with Unicode-compliance
+normalisations applied (canonical combining-mark order, Arabic-yeh → Farsi-yeh,
+precomposed-alef-madda decomposition, iqlāb / open-tanwīn disambiguation, …)
+and source errors against the printed Cairo 1924 edition corrected. Each word
+carries its Arabic text plus any `waqf_ending` or `sajda_ending` in separate
+fields. Regular and open tanwīn are kept strictly distinct; iqlāb is
+represented as `haraka + small-high-meem` (matching Madinah's encoding). See
+[DATA.md › Cairo Reference Text Curation](./DATA.md#cairo-reference-text-curation)
+for the full list of transformations and corrections.
 
 ```json
 {
@@ -184,18 +194,19 @@ The Cairo 1924 Quran text (Ḥafṣ reading) is provided as a standalone referen
   "total_verses": 6236,
   "verses": [
     {
-      "surah": 1,
-      "verse": 1,
+      "surah": 2,
+      "verse": 2,
       "words": [
         {
           "position": 1,
-          "transliteration": "bi-smi",
-          "arabic": "بِسۡمِ"
+          "transliteration": "ḏālika",
+          "arabic": "ذَٰلِكَ"
         },
         {
-          "position": 2,
-          "transliteration": "llāhi",
-          "arabic": "ٱللَّهِ"
+          "position": 4,
+          "transliteration": "raiba",
+          "arabic": "رَیۡبَ",
+          "waqf_ending": "ۛ"
         }
       ]
     }
@@ -203,7 +214,11 @@ The Cairo 1924 Quran text (Ḥafṣ reading) is provided as a standalone referen
 }
 ```
 
-This file is extracted from the Corpus Coranicum TEI XML and provides both transliteration and Arabic text for all 6,236 verses. **This makes the repository self-contained** - no external files are needed for data processing or validation.
+This file is extracted from the Corpus Coranicum TEI XML, verified against the
+Madinah mushaf, and normalised for Unicode compliance. It provides the
+transliteration, Arabic text, and optional pause/sajda annotations for all
+6,236 verses. **This makes the repository self-contained** — no external files
+are needed for data processing or validation.
 
 ## 🚀 Quick Start
 
@@ -258,7 +273,7 @@ verse_data = df[(df['surah'] == 1) & (df['verse'] == 1)]
 
 ```bash
 # Scrape all verses
-node scrape.js
+node scripts/scrape.js
 
 # The script automatically:
 # 1. Scrapes all 6,236 verses
@@ -271,13 +286,13 @@ node scrape.js
 
 ```bash
 # Fix data quality issues (already done if you scraped)
-python3 fix_variants.py
+uv run scripts/fix_variants.py
 
 # Convert to CSV format
-python3 convert_to_csv.py
+uv run scripts/convert_to_csv.py
 
 # Run validation tests
-uv run pytest test_variants.py -v
+uv run pytest tests/test_variants.py -v
 ```
 
 ## 🔍 Data Quality
@@ -285,7 +300,7 @@ uv run pytest test_variants.py -v
 The dataset includes comprehensive validation tests:
 
 ```bash
-uv run pytest test_variants.py -v
+uv run pytest tests/test_variants.py -v
 ```
 
 **Tests verify:**

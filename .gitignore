@@ -51,15 +51,15 @@ tmp/
 *.log
 
 # Large data files (optional - uncomment if you don't want to commit data)
-# all_variants_fixed.json
-# taisir_variants.csv
-# cairo_quran.json
+# data/all_variants_fixed.json
+# data/taisir_variants.csv
+# data/cairo_quran.json
 
 # Raw scraped data (not needed in repo - use fixed version)
-all_variants.json
+data/all_variants.json
 
 # Progress checkpoints
 progress_*.json
-multiple_variants.csv
-PUBLISH.md
-TRANSLITERATE_TO_ARABIC.md
+data/multiple_variants.csv
+docs/PUBLISH.md
+docs/TRANSLITERATE_TO_ARABIC.md

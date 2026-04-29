@@ -1,0 +1,1492 @@
+[
+  {
+    "surah": 33,
+    "verse": 28,
+    "word_position": 4,
+    "arabic_old": "لِأَزۡوَٰجِكَ",
+    "arabic_new": "لِّأَزۡوَٰجِكَ",
+    "transliteration_old": "li-ʾazwāǧika",
+    "transliteration_new": "li-ʾazwāǧika",
+    "comment": "قُل لِّأَزْوَاجِكَ — the printed Cairo 1924 mushaf has the shadda on the لام (idgham after the sukūn of قُل); the XML source is missing it."
+  },
+  {
+    "surah": 33,
+    "verse": 59,
+    "word_position": 4,
+    "arabic_old": "لِأَزۡوَٰجِكَ",
+    "arabic_new": "لِّأَزۡوَٰجِكَ",
+    "transliteration_old": "li-ʾazwāǧika",
+    "transliteration_new": "li-ʾazwāǧika",
+    "comment": "قُل لِّأَزْوَاجِكَ — same as 33:28, shadda missing from XML source."
+  },
+  {
+    "surah": 2,
+    "verse": 159,
+    "word_position": 20,
+    "arabic_old": "ٱلَّلَٰعِنُونَ",
+    "arabic_new": "ٱللَّٰعِنُونَ",
+    "transliteration_old": "l-lāʿinūna",
+    "transliteration_new": "l-lāʿinūna",
+    "comment": "ٱللَّٰعِنُونَ — Cairo XML placed the shadda on the first لام; the printed mushaf (and Madinah) place it on the second لام with the fatha+sup-alef on that same second لام."
+  },
+  {
+    "surah": 5,
+    "verse": 31,
+    "word_position": 20,
+    "arabic_old": "فَأُوَٰرِی",
+    "arabic_new": "فَأُوَٰرِیَ",
+    "transliteration_old": "fa-ʾuwāriya",
+    "transliteration_new": "fa-ʾuwāriya",
+    "comment": "فَأُوَٰرِيَ — Cairo XML is missing the trailing fatha on the yāʾ (subjunctive ending -iya); the printed Cairo mushaf has it."
+  },
+  {
+    "surah": 2,
+    "verse": 240,
+    "word_position": 7,
+    "arabic_old": "لِأَزۡوَٰجِهِم",
+    "arabic_new": "لِّأَزۡوَٰجِهِم",
+    "transliteration_old": "li-ʾazwāǧihim",
+    "transliteration_new": "li-ʾazwāǧihim",
+    "comment": "لِّأَزْوَاجِهِم — preposition lām missing its shadda in the XML source (same idgham pattern as 33:28, 33:59); the printed Cairo mushaf has it."
+  },
+  {
+    "surah": 3,
+    "verse": 178,
+    "word_position": 9,
+    "arabic_old": "لِأَنفُسِهِمۡ",
+    "arabic_new": "لِّأَنفُسِهِمۡ",
+    "transliteration_old": "li-ʾanfusihim",
+    "transliteration_new": "li-ʾanfusihim",
+    "comment": "خَيۡرࣱ لِّأَنفُسِهِمۡ — preposition lām missing its shadda (idgham after open dammatan); Cairo mushaf has it."
+  },
+  {
+    "surah": 5,
+    "verse": 114,
+    "word_position": 15,
+    "arabic_old": "لِأَوَّلِنَا",
+    "arabic_new": "لِّأَوَّلِنَا",
+    "transliteration_old": "li-ʾawwalinā",
+    "transliteration_new": "li-ʾawwalinā",
+    "comment": "عِيدࣰا لِّأَوَّلِنَا — preposition lām missing its shadda (idgham after open fathatan); Cairo mushaf has it."
+  },
+  {
+    "surah": 64,
+    "verse": 16,
+    "word_position": 9,
+    "arabic_old": "لِأَنفُسِكُمۡ",
+    "arabic_new": "لِّأَنفُسِكُمۡ",
+    "transliteration_old": "li-ʾanfusikum",
+    "transliteration_new": "li-ʾanfusikum",
+    "comment": "خَيۡرࣰا لِّأَنفُسِكُمۡ — preposition lām missing its shadda (idgham after open fathatan); Cairo mushaf has it."
+  },
+  {
+    "surah": 7,
+    "verse": 146,
+    "word_position": 3,
+    "arabic_old": "ءَایَٰتِی",
+    "arabic_new": "ءَایَٰتِیَ",
+    "transliteration_old": "ʾāyātiya",
+    "transliteration_new": "ʾāyātiya",
+    "comment": "Diff review: cairo-missing-haraka — Insert U+064E at index 9 in Cairo (missing diacritic)."
+  },
+  {
+    "surah": 11,
+    "verse": 51,
+    "word_position": 7,
+    "arabic_old": "أَجۡرِی",
+    "arabic_new": "أَجۡرِیَ",
+    "transliteration_old": "ʾaǧriya",
+    "transliteration_new": "ʾaǧriya",
+    "comment": "Diff review: cairo-missing-haraka — Insert U+064E at index 7 in Cairo (missing diacritic)."
+  },
+  {
+    "surah": 44,
+    "verse": 39,
+    "word_position": 6,
+    "arabic_old": "أَكۡثرهُمۡ",
+    "arabic_new": "أَكۡثَرَهُمۡ",
+    "transliteration_old": "ʾakṯarahum",
+    "transliteration_new": "ʾakṯarahum",
+    "comment": "Diff review: multi-char-diff — First diff at index 5: M=U+064E C=U+0631. | instruction: madinah is correct. Use it"
+  },
+  {
+    "surah": 18,
+    "verse": 63,
+    "word_position": 11,
+    "arabic_old": "أَنۡسَىٰنِیهُ",
+    "arabic_new": "أَنسَىٰنِیهُ",
+    "transliteration_old": "ʾansānīhu",
+    "transliteration_new": "ʾansānīhu",
+    "comment": "Diff review: cairo-extra-haraka — Whitelist or remove U+06E1 at index 3 in Cairo. | instruction: madinah is correct. Use it"
+  },
+  {
+    "surah": 34,
+    "verse": 13,
+    "word_position": 14,
+    "arabic_old": "دَاوُ‌ۥدَ",
+    "arabic_new": "دَاوُۥدَ",
+    "transliteration_old": "dāwūda",
+    "transliteration_new": "dāwūda",
+    "comment": "Diff review: cairo-extra-char — Whitelist or remove U+200C at index 5 in Cairo. | instruction: madinah is correct. Use it"
+  },
+  {
+    "surah": 36,
+    "verse": 19,
+    "word_position": 5,
+    "arabic_old": "ذُكِّرۡتُمۡ",
+    "arabic_new": "ذُكِّرۡتُم",
+    "transliteration_old": "ḏukkirtum",
+    "transliteration_new": "ḏukkirtum",
+    "comment": "Diff review: cairo-extra-haraka — Whitelist or remove U+06E1 at index 10 in Cairo. | instruction: madinah is correct. Use it"
+  },
+  {
+    "surah": 75,
+    "verse": 23,
+    "word_position": 2,
+    "arabic_old": "رَبّهَا",
+    "arabic_new": "رَبِّهَا",
+    "transliteration_old": "rabbihā",
+    "transliteration_new": "rabbihā",
+    "comment": "Diff review: cairo-missing-haraka — Insert U+0650 at index 4 in Cairo (missing diacritic)."
+  },
+  {
+    "surah": 13,
+    "verse": 3,
+    "word_position": 7,
+    "arabic_old": "رَوَٰسِی",
+    "arabic_new": "رَوَٰسِیَ",
+    "transliteration_old": "rawāsiya",
+    "transliteration_new": "rawāsiya",
+    "comment": "Diff review: cairo-missing-haraka — Insert U+064E at index 8 in Cairo (missing diacritic)."
+  },
+  {
+    "surah": 28,
+    "verse": 30,
+    "word_position": 5,
+    "arabic_old": "شَٰطِىِٕ",
+    "arabic_new": "شَـٰطِیِٕ",
+    "transliteration_old": "šāṭiʾi",
+    "transliteration_new": "šāṭiʾi",
+    "comment": "Diff review: single-char-swap — Swap index 5: Madinah U+06CC vs Cairo U+0649. | instruction: madinah is correct. Use it"
+  },
+  {
+    "surah": 27,
+    "verse": 42,
+    "word_position": 7,
+    "arabic_old": "كَأنَّهُۥ",
+    "arabic_new": "كَأَنَّهُۥ",
+    "transliteration_old": "ka-ʾannahū",
+    "transliteration_new": "ka-ʾannahū",
+    "comment": "Diff review: cairo-missing-haraka — Insert U+064E at index 3 in Cairo (missing diacritic)."
+  },
+  {
+    "surah": 21,
+    "verse": 90,
+    "word_position": 10,
+    "arabic_old": "كَانُوا",
+    "arabic_new": "كَانُوا۟",
+    "transliteration_old": "kānū",
+    "transliteration_new": "kānū",
+    "comment": "Diff review: cairo-missing-char — Insert U+06DF at index 7 in Cairo (needs verification)."
+  },
+  {
+    "surah": 7,
+    "verse": 137,
+    "word_position": 13,
+    "arabic_old": "كَلِمَةُُ",
+    "arabic_new": "كَلِمَةُ",
+    "transliteration_old": "kalimatu",
+    "transliteration_new": "kalimatu",
+    "comment": "Diff review: multi-char-diff — First diff at index 6: M=U+062A C=U+0629. | instruction: whitelist, but remove extra damma from Cairo (double damma not allowed in Arabic)"
+  },
+  {
+    "surah": 43,
+    "verse": 4,
+    "word_position": 6,
+    "arabic_old": "لَعَلِی",
+    "arabic_new": "لَعَلِیٌّ",
+    "transliteration_old": "la-ʿaliyyun",
+    "transliteration_new": "la-ʿaliyyun",
+    "comment": "Diff review: complex-diff — Madinah len 9, Cairo len 7. | instruction: madinah is correct. Use it"
+  },
+  {
+    "surah": 56,
+    "verse": 52,
+    "word_position": 1,
+    "arabic_old": "الَـٔاَكِلُونَ",
+    "arabic_new": "لَـَٔاكِلُونَ",
+    "transliteration_old": "la-ʾākilūna",
+    "transliteration_new": "la-ʾākilūna",
+    "comment": "Diff review: multi-char-diff — First diff at index 0: M=U+0644 C=U+0627. | instruction: madinah is correct. Use it"
+  },
+  {
+    "surah": 86,
+    "verse": 8,
+    "word_position": 4,
+    "arabic_old": "لَقَادِر",
+    "arabic_new": "لَقَادِرٌ",
+    "transliteration_old": "la-qādirun",
+    "transliteration_new": "la-qādirun",
+    "comment": "Diff review: cairo-missing-char — Insert U+064C at index 8 in Cairo (needs verification)."
+  },
+  {
+    "surah": 45,
+    "verse": 12,
+    "word_position": 6,
+    "arabic_old": "لِتَجۡرِی",
+    "arabic_new": "لِتَجۡرِیَ",
+    "transliteration_old": "li-taǧriya",
+    "transliteration_new": "li-taǧriya",
+    "comment": "Diff review: cairo-missing-haraka — Insert U+064E at index 9 in Cairo (missing diacritic)."
+  },
+  {
+    "surah": 10,
+    "verse": 4,
+    "word_position": 12,
+    "arabic_old": "لِیَجۡزِی",
+    "arabic_new": "لِیَجۡزِیَ",
+    "transliteration_old": "li-yaǧziya",
+    "transliteration_new": "li-yaǧziya",
+    "comment": "Diff review: cairo-missing-haraka — Insert U+064E at index 9 in Cairo (missing diacritic)."
+  },
+  {
+    "surah": 11,
+    "verse": 41,
+    "word_position": 6,
+    "arabic_old": "مَجۡر۪ىٰهَا",
+    "arabic_new": "مَجۡرٜىٰهَا",
+    "transliteration_old": "maǧrāhā",
+    "transliteration_new": "maǧrāhā",
+    "comment": "Diff review: single-char-swap — Swap index 5: Madinah U+065C vs Cairo U+06EA. | instruction: madinah is correct. Use it"
+  },
+  {
+    "surah": 26,
+    "verse": 62,
+    "word_position": 4,
+    "arabic_old": "مَعِی",
+    "arabic_new": "مَعِیَ",
+    "transliteration_old": "maʿiya",
+    "transliteration_new": "maʿiya",
+    "comment": "Diff review: cairo-missing-haraka — Insert U+064E at index 5 in Cairo (missing diacritic)."
+  },
+  {
+    "surah": 34,
+    "verse": 14,
+    "word_position": 13,
+    "arabic_old": "مِنسَأَتَهُ‌ۥ",
+    "arabic_new": "مِنسَأَتَهُۥ",
+    "transliteration_old": "minsaʾatahū",
+    "transliteration_new": "minsaʾatahū",
+    "comment": "Diff review: cairo-extra-char — Whitelist or remove U+200C at index 11 in Cairo. | instruction: remove U+200C"
+  },
+  {
+    "surah": 46,
+    "verse": 30,
+    "word_position": 7,
+    "arabic_old": "مِن",
+    "arabic_new": "مِنۢ",
+    "transliteration_old": "min",
+    "transliteration_new": "min",
+    "comment": "Diff review: cairo-missing-char — Insert U+06E2 at index 3 in Cairo (needs verification)."
+  },
+  {
+    "surah": 66,
+    "verse": 3,
+    "word_position": 27,
+    "arabic_old": "نَبَّأَنِی",
+    "arabic_new": "نَبَّأَنِیَ",
+    "transliteration_old": "nabbaʾaniya",
+    "transliteration_new": "nabbaʾaniya",
+    "comment": "Diff review: cairo-missing-haraka — Insert U+064E at index 10 in Cairo (missing diacritic)."
+  },
+  {
+    "surah": 6,
+    "verse": 34,
+    "word_position": 21,
+    "arabic_old": "نَّبَإِی",
+    "arabic_new": "نَّبَإِی۟",
+    "transliteration_old": "nabaʾi",
+    "transliteration_new": "nabaʾi",
+    "comment": "Diff review: cairo-missing-char — Insert U+06DF at index 8 in Cairo (needs verification)."
+  },
+  {
+    "surah": 101,
+    "verse": 9,
+    "word_position": 2,
+    "arabic_old": "هَاوِیة",
+    "arabic_new": "هَاوِیَةࣱ",
+    "transliteration_old": "hāwiyatun",
+    "transliteration_new": "hāwiyatun",
+    "comment": "Diff review: multi-char-diff — First diff at index 6: M=U+064E C=U+0629. | instruction: madinah is correct. Use it"
+  },
+  {
+    "surah": 45,
+    "verse": 19,
+    "word_position": 14,
+    "arabic_old": "وَلِی",
+    "arabic_new": "وَلِیُّ",
+    "transliteration_old": "waliyyu",
+    "transliteration_new": "waliyyu",
+    "comment": "Diff review: complex-diff — Madinah len 7, Cairo len 5. | instruction: madinah is correct. Use it"
+  },
+  {
+    "surah": 79,
+    "verse": 1,
+    "word_position": 1,
+    "arabic_old": "وَٱلنَّٰزِعَٰت",
+    "arabic_new": "وَٱلنَّٰزِعَٰتِ",
+    "transliteration_old": "wa-n-nāziʿāti",
+    "transliteration_new": "wa-n-nāziʿāti",
+    "comment": "Diff review: cairo-missing-haraka — Insert U+0650 at index 14 in Cairo (missing diacritic)."
+  },
+  {
+    "surah": 35,
+    "verse": 43,
+    "word_position": 5,
+    "arabic_old": "ٱلسَّیِّیِٕ",
+    "arabic_new": "ٱلسَّیِّیِٕ",
+    "transliteration_old": "s-sayyiʾi",
+    "transliteration_new": "s-sayyiʾi",
+    "comment": "Diff review: multi-char-diff — First diff at index 9: M=U+0655 C=U+0650. | instruction: swap hamza and kasra at the end (waw+hamza-below + kasra)"
+  },
+  {
+    "surah": 56,
+    "verse": 23,
+    "word_position": 2,
+    "arabic_old": "ٱللُّؤۡلُوِٕ",
+    "arabic_new": "ٱللُّؤۡلُوِٕ",
+    "transliteration_old": "l-luʾluʾi",
+    "transliteration_new": "l-luʾluʾi",
+    "comment": "Diff review: multi-char-diff — First diff at index 10: M=U+0655 C=U+0650. | instruction: swap hamza and kasra at the end (waw+hamza-below + kasra)"
+  },
+  {
+    "surah": 57,
+    "verse": 14,
+    "word_position": 13,
+    "arabic_old": "ٱلۡأَمَانِی",
+    "arabic_new": "ٱلۡأَمَانِیُّ",
+    "transliteration_old": "l-ʾamāniyyu",
+    "transliteration_new": "l-ʾamāniyyu",
+    "comment": "Diff review: complex-diff — Madinah len 13, Cairo len 11. | instruction: madinah is correct. Use it"
+  },
+  {
+    "surah": 76,
+    "verse": 27,
+    "word_position": 4,
+    "arabic_old": "ٱلۡعَاجلَةَ",
+    "arabic_new": "ٱلۡعَاجِلَةَ",
+    "transliteration_old": "l-ʿāǧilata",
+    "transliteration_new": "l-ʿāǧilata",
+    "comment": "Diff review: cairo-missing-haraka — Insert U+0650 at index 7 in Cairo (missing diacritic)."
+  },
+  {
+    "surah": 24,
+    "verse": 22,
+    "word_position": 10,
+    "arabic_old": "ٱلۡقُربَىٰ",
+    "arabic_new": "ٱلۡقُرۡبَىٰ",
+    "transliteration_old": "l-qurbā",
+    "transliteration_new": "l-qurbā",
+    "comment": "Diff review: cairo-missing-haraka — Insert U+06E1 at index 6 in Cairo (missing diacritic)."
+  },
+  {
+    "surah": 55,
+    "verse": 37,
+    "word_position": 2,
+    "arabic_old": "ٱنشَقَّت",
+    "arabic_new": "ٱنشَقَّتِ",
+    "transliteration_old": "nšaqqati",
+    "transliteration_new": "nšaqqati",
+    "comment": "Diff review: cairo-missing-haraka — Insert U+0650 at index 8 in Cairo (missing diacritic)."
+  },
+  {
+    "surah": 14,
+    "verse": 31,
+    "word_position": 15,
+    "arabic_old": "یَأۡتِی",
+    "arabic_new": "یَأۡتِیَ",
+    "transliteration_old": "yaʾtiya",
+    "transliteration_new": "yaʾtiya",
+    "comment": "Diff review: cairo-missing-haraka — Insert U+064E at index 7 in Cairo (missing diacritic)."
+  },
+  {
+    "surah": 60,
+    "verse": 1,
+    "word_position": 1,
+    "arabic_old": "یَٰٓأَیُّهَاء",
+    "arabic_new": "یَٰٓأَیُّهَا",
+    "transliteration_old": "yā-ʾayyuha",
+    "transliteration_new": "yā-ʾayyuha",
+    "comment": "Diff review: cairo-extra-char — Whitelist or remove U+0621 at index 12 in Cairo. | instruction: remove U+0621"
+  },
+  {
+    "surah": 38,
+    "verse": 55,
+    "word_position": 3,
+    "arabic_old": "لِّلطَّٰاغِینَ",
+    "arabic_new": "لِلطَّـاغِینَ",
+    "transliteration_old": "li-ṭ-ṭāġīna",
+    "transliteration_new": "li-ṭ-ṭāġīna",
+    "comment": "Diff review: multi-char-diff — Use Madinah version, superscript alef replaced with regular alef (لِلطَّـاغِینَ)."
+  },
+  {
+    "surah": 17,
+    "verse": 7,
+    "word_position": 12,
+    "arabic_old": "لِیَسُـٓۥـُٔوا۟",
+    "arabic_new": "لِیَسُـࣳٓــُٔوا۟",
+    "transliteration_old": "li-yasūʾū",
+    "transliteration_new": "li-yasūʾū",
+    "comment": "Diff review: multi-char-diff — Madinah is correct. Rewrite Cairo `لِیَسُـٓۥـُٔوا۟` to `لِیَسُـࣳٓـُٔوا۟` (U+08F3 between tatweel and maddah, extra tatweel before hamza-above)."
+  },
+  {
+    "surah": 78,
+    "verse": 22,
+    "word_position": 1,
+    "arabic_old": "لِّلطَّٰاغِینَ",
+    "arabic_new": "لِّلطَّـاغِینَ",
+    "transliteration_old": "li-ṭ-ṭāġīna",
+    "transliteration_new": "li-ṭ-ṭāġīna",
+    "comment": "Diff review: cairo-extra-char — Use Madinah version, superscript alef replaced with regular alef (لِّلطَّـاغِینَ)."
+  },
+  {
+    "surah": 25,
+    "verse": 49,
+    "word_position": 1,
+    "arabic_old": "لِّنُحۡیَ",
+    "arabic_new": "لِّنُحۡـِۧیَ",
+    "transliteration_old": "li-nuḥyiya",
+    "transliteration_new": "li-nuḥyiya",
+    "comment": "Diff review: multi-char-diff — Madinah is correct. Rewrite Cairo `لِّنُحۡیَ` to `لِّنُحۡـِۧیَ` (insert tatweel + U+06E7 + kasra)."
+  },
+  {
+    "surah": 3,
+    "verse": 91,
+    "word_position": 11,
+    "arabic_old": "مِّلۡـُٔ",
+    "arabic_new": "مِّلۡءُ",
+    "transliteration_old": "milʾu",
+    "transliteration_new": "milʾu",
+    "comment": "Diff review: multi-char-diff — Madinah is correct. Rewrite Cairo `مِّلۡـُٔ` to `مِّلۡءُ` (use plain hamza letter instead of tatweel+hamza-above)."
+  },
+  {
+    "surah": 21,
+    "verse": 88,
+    "word_position": 7,
+    "arabic_old": "نُجِۨی",
+    "arabic_new": "نُـۨجِی",
+    "transliteration_old": "nunǧī",
+    "transliteration_new": "nunǧī",
+    "comment": "Diff review: multi-char-diff — Madinah is correct. Rewrite Cairo `نُجِۨی` to `نُـۨجِی` (U+06E8 annotation positioned after nūn-damma, not after jīm-kasra)."
+  },
+  {
+    "surah": 75,
+    "verse": 40,
+    "word_position": 6,
+    "arabic_old": "یُحۡیَِ",
+    "arabic_new": "یُحۡـِۧیَ",
+    "transliteration_old": "yuḥyiya",
+    "transliteration_new": "yuḥyiya",
+    "comment": "Diff review: multi-char-diff — Madinah is correct. Rewrite Cairo `یُحۡیَِ` to `یُحۡـِۧیَ` (add tatweel + U+06E7 before the yeh with kasra)."
+  },
+  {
+    "surah": 4,
+    "verse": 157,
+    "word_position": 22,
+    "arabic_old": "شَكٍّ",
+    "arabic_new": "شَكࣲّ",
+    "transliteration_old": "šakkin",
+    "transliteration_new": "šakkin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 10,
+    "verse": 94,
+    "word_position": 4,
+    "arabic_old": "شَكٍّ",
+    "arabic_new": "شَكࣲّ",
+    "transliteration_old": "šakkin",
+    "transliteration_new": "šakkin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 10,
+    "verse": 104,
+    "word_position": 7,
+    "arabic_old": "شَكٍّ",
+    "arabic_new": "شَكࣲّ",
+    "transliteration_old": "šakkin",
+    "transliteration_new": "šakkin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 11,
+    "verse": 62,
+    "word_position": 17,
+    "arabic_old": "شَكٍّ",
+    "arabic_new": "شَكࣲّ",
+    "transliteration_old": "šakkin",
+    "transliteration_new": "šakkin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 11,
+    "verse": 110,
+    "word_position": 16,
+    "arabic_old": "شَكٍّ",
+    "arabic_new": "شَكࣲّ",
+    "transliteration_old": "šakkin",
+    "transliteration_new": "šakkin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 2,
+    "verse": 107,
+    "word_position": 15,
+    "arabic_old": "وَلِیٍّ",
+    "arabic_new": "وَلِیࣲّ",
+    "transliteration_old": "waliyyin",
+    "transliteration_new": "waliyyin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 2,
+    "verse": 120,
+    "word_position": 29,
+    "arabic_old": "وَلِیٍّ",
+    "arabic_new": "وَلِیࣲّ",
+    "transliteration_old": "waliyyin",
+    "transliteration_new": "waliyyin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 9,
+    "verse": 74,
+    "word_position": 44,
+    "arabic_old": "وَلِیٍّ",
+    "arabic_new": "وَلِیࣲّ",
+    "transliteration_old": "waliyyin",
+    "transliteration_new": "waliyyin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 9,
+    "verse": 116,
+    "word_position": 15,
+    "arabic_old": "وَلِیٍّ",
+    "arabic_new": "وَلِیࣲّ",
+    "transliteration_old": "waliyyin",
+    "transliteration_new": "waliyyin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 13,
+    "verse": 37,
+    "word_position": 18,
+    "arabic_old": "وَلِیٍّ",
+    "arabic_new": "وَلِیࣲّ",
+    "transliteration_old": "waliyyin",
+    "transliteration_new": "waliyyin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 3,
+    "verse": 21,
+    "word_position": 9,
+    "arabic_old": "حَقٍّ",
+    "arabic_new": "حَقࣲّ",
+    "transliteration_old": "ḥaqqin",
+    "transliteration_new": "ḥaqqin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 3,
+    "verse": 112,
+    "word_position": 30,
+    "arabic_old": "حَقٍّ",
+    "arabic_new": "حَقࣲّ",
+    "transliteration_old": "ḥaqqin",
+    "transliteration_new": "ḥaqqin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 3,
+    "verse": 181,
+    "word_position": 18,
+    "arabic_old": "حَقٍّ",
+    "arabic_new": "حَقࣲّ",
+    "transliteration_old": "ḥaqqin",
+    "transliteration_new": "ḥaqqin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 4,
+    "verse": 155,
+    "word_position": 10,
+    "arabic_old": "حَقٍّ",
+    "arabic_new": "حَقࣲّ",
+    "transliteration_old": "ḥaqqin",
+    "transliteration_new": "ḥaqqin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 11,
+    "verse": 79,
+    "word_position": 9,
+    "arabic_old": "حَقٍّ",
+    "arabic_new": "حَقࣲّ",
+    "transliteration_old": "ḥaqqin",
+    "transliteration_new": "ḥaqqin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 2,
+    "verse": 148,
+    "word_position": 1,
+    "arabic_old": "وَلِكُلٍّ",
+    "arabic_new": "وَلِكُلࣲّ",
+    "transliteration_old": "wa-li-kullin",
+    "transliteration_new": "wa-li-kullin",
+    "comment": "Diff review: single-char-swap — Swap index 8: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 4,
+    "verse": 33,
+    "word_position": 1,
+    "arabic_old": "وَلِكُلٍّ",
+    "arabic_new": "وَلِكُلࣲّ",
+    "transliteration_old": "wa-li-kullin",
+    "transliteration_new": "wa-li-kullin",
+    "comment": "Diff review: single-char-swap — Swap index 8: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 6,
+    "verse": 132,
+    "word_position": 1,
+    "arabic_old": "وَلِكُلٍّ",
+    "arabic_new": "وَلِكُلࣲّ",
+    "transliteration_old": "wa-li-kullin",
+    "transliteration_new": "wa-li-kullin",
+    "comment": "Diff review: single-char-swap — Swap index 8: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 46,
+    "verse": 19,
+    "word_position": 1,
+    "arabic_old": "وَلِكُلٍّ",
+    "arabic_new": "وَلِكُلࣲّ",
+    "transliteration_old": "wa-li-kullin",
+    "transliteration_new": "wa-li-kullin",
+    "comment": "Diff review: single-char-swap — Swap index 8: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 17,
+    "verse": 23,
+    "word_position": 19,
+    "arabic_old": "أُفٍّ",
+    "arabic_new": "أُفࣲّ",
+    "transliteration_old": "ʾuffin",
+    "transliteration_new": "ʾuffin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 21,
+    "verse": 67,
+    "word_position": 1,
+    "arabic_old": "أُفٍّ",
+    "arabic_new": "أُفࣲّ",
+    "transliteration_old": "ʾuffin",
+    "transliteration_new": "ʾuffin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 46,
+    "verse": 17,
+    "word_position": 4,
+    "arabic_old": "أُفٍّ",
+    "arabic_new": "أُفࣲّ",
+    "transliteration_old": "ʾuffin",
+    "transliteration_new": "ʾuffin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 6,
+    "verse": 17,
+    "word_position": 4,
+    "arabic_old": "بِضُرٍّ",
+    "arabic_new": "بِضُرࣲّ",
+    "transliteration_old": "bi-ḍurrin",
+    "transliteration_new": "bi-ḍurrin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 10,
+    "verse": 107,
+    "word_position": 4,
+    "arabic_old": "بِضُرٍّ",
+    "arabic_new": "بِضُرࣲّ",
+    "transliteration_old": "bi-ḍurrin",
+    "transliteration_new": "bi-ḍurrin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 36,
+    "verse": 23,
+    "word_position": 8,
+    "arabic_old": "بِضُرٍّ",
+    "arabic_new": "بِضُرࣲّ",
+    "transliteration_old": "bi-ḍurrin",
+    "transliteration_new": "bi-ḍurrin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 10,
+    "verse": 12,
+    "word_position": 20,
+    "arabic_old": "ضُرٍّ",
+    "arabic_new": "ضُرࣲّ",
+    "transliteration_old": "ḍurrin",
+    "transliteration_new": "ḍurrin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 21,
+    "verse": 84,
+    "word_position": 7,
+    "arabic_old": "ضُرٍّ",
+    "arabic_new": "ضُرࣲّ",
+    "transliteration_old": "ḍurrin",
+    "transliteration_new": "ḍurrin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 23,
+    "verse": 75,
+    "word_position": 7,
+    "arabic_old": "ضُرٍّ",
+    "arabic_new": "ضُرࣲّ",
+    "transliteration_old": "ḍurrin",
+    "transliteration_new": "ḍurrin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 11,
+    "verse": 40,
+    "word_position": 11,
+    "arabic_old": "كُلٍّ",
+    "arabic_new": "كُلࣲّ",
+    "transliteration_old": "kullin",
+    "transliteration_new": "kullin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 23,
+    "verse": 27,
+    "word_position": 16,
+    "arabic_old": "كُلٍّ",
+    "arabic_new": "كُلࣲّ",
+    "transliteration_old": "kullin",
+    "transliteration_new": "kullin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 35,
+    "verse": 12,
+    "word_position": 13,
+    "arabic_old": "كُلٍّ",
+    "arabic_new": "كُلࣲّ",
+    "transliteration_old": "kullin",
+    "transliteration_new": "kullin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 5,
+    "verse": 60,
+    "word_position": 4,
+    "arabic_old": "بِشَرٍّ",
+    "arabic_new": "بِشَرࣲّ",
+    "transliteration_old": "bi-šarrin",
+    "transliteration_new": "bi-šarrin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 22,
+    "verse": 72,
+    "word_position": 20,
+    "arabic_old": "بِشَرٍّ",
+    "arabic_new": "بِشَرࣲّ",
+    "transliteration_old": "bi-šarrin",
+    "transliteration_new": "bi-šarrin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 4,
+    "verse": 92,
+    "word_position": 27,
+    "arabic_old": "عَدُوٍّ",
+    "arabic_new": "عَدُوࣲّ",
+    "transliteration_old": "ʿaduwwin",
+    "transliteration_new": "ʿaduwwin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 9,
+    "verse": 120,
+    "word_position": 39,
+    "arabic_old": "عَدُوٍّ",
+    "arabic_new": "عَدُوࣲّ",
+    "transliteration_old": "ʿaduwwin",
+    "transliteration_new": "ʿaduwwin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 5,
+    "verse": 48,
+    "word_position": 25,
+    "arabic_old": "لِكُلٍّ",
+    "arabic_new": "لِكُلࣲّ",
+    "transliteration_old": "li-kullin",
+    "transliteration_new": "li-kullin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 7,
+    "verse": 38,
+    "word_position": 36,
+    "arabic_old": "لِكُلٍّ",
+    "arabic_new": "لِكُلࣲّ",
+    "transliteration_old": "li-kullin",
+    "transliteration_new": "li-kullin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 56,
+    "verse": 30,
+    "word_position": 1,
+    "arabic_old": "وَظِلٍّ",
+    "arabic_new": "وَظِلࣲّ",
+    "transliteration_old": "wa-ẓillin",
+    "transliteration_new": "wa-ẓillin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 56,
+    "verse": 43,
+    "word_position": 1,
+    "arabic_old": "وَظِلٍّ",
+    "arabic_new": "وَظِلࣲّ",
+    "transliteration_old": "wa-ẓillin",
+    "transliteration_new": "wa-ẓillin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 34,
+    "verse": 15,
+    "word_position": 6,
+    "arabic_old": "ءَایَةٌ",
+    "arabic_new": "ءَایَةࣱ",
+    "transliteration_old": "ʾāyatun",
+    "transliteration_new": "ʾāyatun",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F1 vs Cairo U+064C. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 112,
+    "verse": 4,
+    "word_position": 5,
+    "arabic_old": "أَحَدٌ",
+    "arabic_new": "أَحَدُۢ",
+    "transliteration_old": "ʾaḥadun",
+    "transliteration_new": "ʾaḥadun",
+    "comment": "Diff review: multi-char-diff — First diff at index 5: M=U+064F C=U+064C. | instruction: mistyping in cairo: change to open fathatan"
+  },
+  {
+    "surah": 76,
+    "verse": 31,
+    "word_position": 10,
+    "arabic_old": "أَلِیمًا",
+    "arabic_new": "أَلِیمَۢا",
+    "transliteration_old": "ʾalīman",
+    "transliteration_new": "ʾalīman",
+    "comment": "Diff review: multi-char-diff — First diff at index 6: M=U+064E C=U+064B. | instruction: mistyping in cairo: change to open fathatan"
+  },
+  {
+    "surah": 35,
+    "verse": 45,
+    "word_position": 25,
+    "arabic_old": "بَصِیرًا",
+    "arabic_new": "بَصِیرَۢا",
+    "transliteration_old": "baṣīran",
+    "transliteration_new": "baṣīran",
+    "comment": "Diff review: multi-char-diff — First diff at index 6: M=U+064E C=U+064B. | instruction: mistyping in cairo: change to open fathatan"
+  },
+  {
+    "surah": 7,
+    "verse": 7,
+    "word_position": 3,
+    "arabic_old": "بِعِلۡمٍ",
+    "arabic_new": "بِعِلۡمࣲ",
+    "transliteration_old": "bi-ʿilmin",
+    "transliteration_new": "bi-ʿilmin",
+    "comment": "Diff review: single-char-swap — Swap index 7: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 3,
+    "verse": 153,
+    "word_position": 13,
+    "arabic_old": "بِغَمٍّ",
+    "arabic_new": "بِغَمࣲّ",
+    "transliteration_old": "bi-ġammin",
+    "transliteration_new": "bi-ġammin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 28,
+    "verse": 48,
+    "word_position": 25,
+    "arabic_old": "بِكُلٍّ",
+    "arabic_new": "بِكُلࣲّ",
+    "transliteration_old": "bi-kullin",
+    "transliteration_new": "bi-kullin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 71,
+    "verse": 28,
+    "word_position": 15,
+    "arabic_old": "تَبَارًا",
+    "arabic_new": "تَبَارَۢا",
+    "transliteration_old": "tabāran",
+    "transliteration_new": "tabāran",
+    "comment": "Diff review: multi-char-diff — First diff at index 6: M=U+064E C=U+064B. | instruction: mistyping in cairo: change to open fathatan"
+  },
+  {
+    "surah": 78,
+    "verse": 40,
+    "word_position": 15,
+    "arabic_old": "تُرَٰبًا",
+    "arabic_new": "تُرَٰبَۢا",
+    "transliteration_old": "turāban",
+    "transliteration_new": "turāban",
+    "comment": "Diff review: multi-char-diff — First diff at index 6: M=U+064E C=U+064B. | instruction: mistyping in cairo: change to open fathatan"
+  },
+  {
+    "surah": 38,
+    "verse": 88,
+    "word_position": 4,
+    "arabic_old": "حِینٍ",
+    "arabic_new": "حِینِۭ",
+    "transliteration_old": "ḥīnin",
+    "transliteration_new": "ḥīnin",
+    "comment": "Diff review: multi-char-diff — First diff at index 4: M=U+0650 C=U+064D. | instruction: mistyping in cairo: change to open fathatan"
+  },
+  {
+    "surah": 42,
+    "verse": 45,
+    "word_position": 10,
+    "arabic_old": "خَفِیٍّ",
+    "arabic_new": "خَفِیࣲّ",
+    "transliteration_old": "ḫafiyyin",
+    "transliteration_new": "ḫafiyyin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 52,
+    "verse": 3,
+    "word_position": 2,
+    "arabic_old": "رَقٍّ",
+    "arabic_new": "رَقࣲّ",
+    "transliteration_old": "raqqin",
+    "transliteration_new": "raqqin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 86,
+    "verse": 17,
+    "word_position": 4,
+    "arabic_old": "رُوَیۡدًا",
+    "arabic_new": "رُوَیۡدَۢا",
+    "transliteration_old": "ruwaidan",
+    "transliteration_new": "ruwaidan",
+    "comment": "Diff review: multi-char-diff — First diff at index 7: M=U+064E C=U+064B. | instruction: mistyping in cairo: change to open fathatan"
+  },
+  {
+    "surah": 36,
+    "verse": 58,
+    "word_position": 4,
+    "arabic_old": "رَّبٍّ",
+    "arabic_new": "رَّبࣲّ",
+    "transliteration_old": "rabbin",
+    "transliteration_new": "rabbin",
+    "comment": "Diff review: single-char-swap — Swap index 5: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 37,
+    "verse": 2,
+    "word_position": 2,
+    "arabic_old": "زَجۡرًا",
+    "arabic_new": "زَجۡرࣰا",
+    "transliteration_old": "zaǧran",
+    "transliteration_new": "zaǧran",
+    "comment": "Diff review: single-char-swap — Swap index 5: Madinah U+08F0 vs Cairo U+064B. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 33,
+    "verse": 44,
+    "word_position": 4,
+    "arabic_old": "سَلَٰمٌ",
+    "arabic_new": "سَلَـٰمࣱ",
+    "transliteration_old": "salāmun",
+    "transliteration_new": "salāmun",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F1 vs Cairo U+064C. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 37,
+    "verse": 1,
+    "word_position": 2,
+    "arabic_old": "صَفًّا",
+    "arabic_new": "صَفࣰّا",
+    "transliteration_old": "ṣaffan",
+    "transliteration_new": "ṣaffan",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F0 vs Cairo U+064B. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 77,
+    "verse": 30,
+    "word_position": 3,
+    "arabic_old": "ظِلٍّ",
+    "arabic_new": "ظِلࣲّ",
+    "transliteration_old": "ẓillin",
+    "transliteration_new": "ẓillin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 69,
+    "verse": 6,
+    "word_position": 2,
+    "arabic_old": "عَادٌ",
+    "arabic_new": "عَادࣱ",
+    "transliteration_old": "ʿādun",
+    "transliteration_new": "ʿādun",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F1 vs Cairo U+064C. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 72,
+    "verse": 28,
+    "word_position": 13,
+    "arabic_old": "عَدَدًا",
+    "arabic_new": "عَدَدَۢا",
+    "transliteration_old": "ʿadadan",
+    "transliteration_new": "ʿadadan",
+    "comment": "Diff review: multi-char-diff — First diff at index 5: M=U+064E C=U+064B. | instruction: mistyping in cairo: change to open fathatan"
+  },
+  {
+    "surah": 26,
+    "verse": 195,
+    "word_position": 2,
+    "arabic_old": "عَرَبِیٍّ",
+    "arabic_new": "عَرَبِیࣲّ",
+    "transliteration_old": "ʿarabiyyin",
+    "transliteration_new": "ʿarabiyyin",
+    "comment": "Diff review: single-char-swap — Swap index 8: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 48,
+    "verse": 29,
+    "word_position": 54,
+    "arabic_old": "عَظِیمًا",
+    "arabic_new": "عَظِیمَۢا",
+    "transliteration_old": "ʿaẓīman",
+    "transliteration_new": "ʿaẓīman",
+    "comment": "Diff review: multi-char-diff — First diff at index 6: M=U+064E C=U+064B. | instruction: mistyping in cairo: change to open fathatan"
+  },
+  {
+    "surah": 67,
+    "verse": 21,
+    "word_position": 11,
+    "arabic_old": "عُتُوٍّ",
+    "arabic_new": "عُتُوࣲّ",
+    "transliteration_old": "ʿutuwwin",
+    "transliteration_new": "ʿutuwwin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 6,
+    "verse": 108,
+    "word_position": 12,
+    "arabic_old": "عِلۡمٍ",
+    "arabic_new": "عِلۡمࣲ",
+    "transliteration_old": "ʿilmin",
+    "transliteration_new": "ʿilmin",
+    "comment": "Diff review: single-char-swap — Swap index 5: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 7,
+    "verse": 43,
+    "word_position": 6,
+    "arabic_old": "غِلٍّ",
+    "arabic_new": "غِلࣲّ",
+    "transliteration_old": "ġillin",
+    "transliteration_new": "ġillin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 35,
+    "verse": 44,
+    "word_position": 15,
+    "arabic_old": "قُوَّةً",
+    "arabic_new": "قُوَّةࣰ",
+    "transliteration_old": "quwwatan",
+    "transliteration_new": "quwwatan",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F0 vs Cairo U+064B. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 86,
+    "verse": 8,
+    "word_position": 4,
+    "arabic_old": "لَقَادِرٌ",
+    "arabic_new": "لَقَادِرࣱ",
+    "transliteration_old": "la-qādirun",
+    "transliteration_new": "la-qādirun",
+    "comment": "Diff review: single-char-swap — Swap index 8: Madinah U+08F1 vs Cairo U+064C. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 15,
+    "verse": 6,
+    "word_position": 8,
+    "arabic_old": "لَمَجۡنُونٌ",
+    "arabic_new": "لَمَجۡنُونࣱ",
+    "transliteration_old": "la-maǧnūnun",
+    "transliteration_new": "la-maǧnūnun",
+    "comment": "Diff review: single-char-swap — Swap index 10: Madinah U+08F1 vs Cairo U+064C. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 25,
+    "verse": 77,
+    "word_position": 12,
+    "arabic_old": "لِزَامًا",
+    "arabic_new": "لِزَامَۢا",
+    "transliteration_old": "lizāman",
+    "transliteration_new": "lizāman",
+    "comment": "Diff review: multi-char-diff — First diff at index 6: M=U+064E C=U+064B. | instruction: mistyping in cairo: change to open fathatan"
+  },
+  {
+    "surah": 36,
+    "verse": 38,
+    "word_position": 3,
+    "arabic_old": "لِمُسۡتَقَرٍّ",
+    "arabic_new": "لِمُسۡتَقَرࣲّ",
+    "transliteration_old": "li-mustaqarrin",
+    "transliteration_new": "li-mustaqarrin",
+    "comment": "Diff review: single-char-swap — Swap index 12: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 2,
+    "verse": 246,
+    "word_position": 13,
+    "arabic_old": "لِنَبِیٍّ",
+    "arabic_new": "لِنَبِیࣲّ",
+    "transliteration_old": "li-nabiyyin",
+    "transliteration_new": "li-nabiyyin",
+    "comment": "Diff review: single-char-swap — Swap index 8: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 24,
+    "verse": 40,
+    "word_position": 5,
+    "arabic_old": "لُّجِّیٍّ",
+    "arabic_new": "لُّجِّیࣲّ",
+    "transliteration_old": "luǧiyyin",
+    "transliteration_new": "luǧiyyin",
+    "comment": "Diff review: single-char-swap — Swap index 8: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 42,
+    "verse": 44,
+    "word_position": 18,
+    "arabic_old": "مَرَدٍّ",
+    "arabic_new": "مَرَدࣲّ",
+    "transliteration_old": "maraddin",
+    "transliteration_new": "maraddin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 84,
+    "verse": 25,
+    "word_position": 9,
+    "arabic_old": "مَمۡنُونٍ",
+    "arabic_new": "مَمۡنُونِۭ",
+    "transliteration_old": "mamnūnin",
+    "transliteration_new": "mamnūnin",
+    "comment": "Diff review: multi-char-diff — First diff at index 8: M=U+0650 C=U+064D. | instruction: mistyping in cairo: change to open fathatan"
+  },
+  {
+    "surah": 4,
+    "verse": 12,
+    "word_position": 82,
+    "arabic_old": "مُضَآرٍّ",
+    "arabic_new": "مُضَآرࣲّ",
+    "transliteration_old": "muḍārrin",
+    "transliteration_new": "muḍārrin",
+    "comment": "Diff review: single-char-swap — Swap index 8: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 105,
+    "verse": 5,
+    "word_position": 3,
+    "arabic_old": "مَّأۡكُولٍ",
+    "arabic_new": "مَّأۡكُولِۭ",
+    "transliteration_old": "maʾkūlin",
+    "transliteration_new": "maʾkūlin",
+    "comment": "Diff review: multi-char-diff — First diff at index 9: M=U+0650 C=U+064D. | instruction: mistyping in cairo: change to open fathatan"
+  },
+  {
+    "surah": 85,
+    "verse": 22,
+    "word_position": 3,
+    "arabic_old": "مَّحۡفُوظٍ",
+    "arabic_new": "مَّحۡفُوظِۭ",
+    "transliteration_old": "maḥfūẓin",
+    "transliteration_new": "maḥfūẓin",
+    "comment": "Diff review: multi-char-diff — First diff at index 9: M=U+0650 C=U+064D. | instruction: mistyping in cairo: change to open fathatan"
+  },
+  {
+    "surah": 111,
+    "verse": 5,
+    "word_position": 5,
+    "arabic_old": "مَّسَدٍ",
+    "arabic_new": "مَّسَدِۭ",
+    "transliteration_old": "masadin",
+    "transliteration_new": "masadin",
+    "comment": "Diff review: multi-char-diff — First diff at index 6: M=U+0650 C=U+064D. | instruction: mistyping in cairo: change to open fathatan"
+  },
+  {
+    "surah": 67,
+    "verse": 30,
+    "word_position": 10,
+    "arabic_old": "مَّعِینٍ",
+    "arabic_new": "مَّعِینِۭ",
+    "transliteration_old": "maʿīnin",
+    "transliteration_new": "maʿīnin",
+    "comment": "Diff review: multi-char-diff — First diff at index 7: M=U+0650 C=U+064D. | instruction: mistyping in cairo: change to open fathatan"
+  },
+  {
+    "surah": 2,
+    "verse": 203,
+    "word_position": 5,
+    "arabic_old": "مَّعۡدُودَٰتٍ",
+    "arabic_new": "مَّعۡدُودَٰتࣲ",
+    "transliteration_old": "maʿdūdātin",
+    "transliteration_new": "maʿdūdātin",
+    "comment": "Diff review: single-char-swap — Swap index 12: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 15,
+    "verse": 4,
+    "word_position": 8,
+    "arabic_old": "مَّعۡلُومٌ",
+    "arabic_new": "مَّعۡلُومࣱ",
+    "transliteration_old": "maʿlūmun",
+    "transliteration_new": "maʿlūmun",
+    "comment": "Diff review: single-char-swap — Swap index 9: Madinah U+08F1 vs Cairo U+064C. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 75,
+    "verse": 37,
+    "word_position": 5,
+    "arabic_old": "مَّنِیٍّ",
+    "arabic_new": "مَّنِیࣲّ",
+    "transliteration_old": "maniyyin",
+    "transliteration_new": "maniyyin",
+    "comment": "Diff review: single-char-swap — Swap index 7: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 54,
+    "verse": 19,
+    "word_position": 9,
+    "arabic_old": "مُّسۡتَمِرٍّ",
+    "arabic_new": "مُّسۡتَمِرࣲّ",
+    "transliteration_old": "mustamirrin",
+    "transliteration_new": "mustamirrin",
+    "comment": "Diff review: single-char-swap — Swap index 11: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 43,
+    "verse": 7,
+    "word_position": 4,
+    "arabic_old": "نَّبِیࣲّ",
+    "arabic_new": "نَّبِیٍّ",
+    "transliteration_old": "nabiyyin",
+    "transliteration_new": "nabiyyin",
+    "comment": "Diff review: single-char-swap — Swap index 7: Madinah U+064D vs Cairo U+08F2. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 3,
+    "verse": 146,
+    "word_position": 3,
+    "arabic_old": "نَّبِیٍّ",
+    "arabic_new": "نَّبِیࣲّ",
+    "transliteration_old": "nabiyyin",
+    "transliteration_new": "nabiyyin",
+    "comment": "Diff review: single-char-swap — Swap index 7: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 52,
+    "verse": 21,
+    "word_position": 16,
+    "arabic_old": "ٱمۡرِئِۭ",
+    "arabic_new": "ٱمۡرِیِٕۭ",
+    "transliteration_old": "mriʾin",
+    "transliteration_new": "mriʾin",
+    "comment": "Diff review: multi-char-diff — First diff at index 5: M=U+06CC C=U+0626. | instruction: just switch yeh hamza above with alef maksura + hamza below in cairo"
+  },
+  {
+    "surah": 14,
+    "verse": 9,
+    "word_position": 33,
+    "arabic_old": "شَكٍّ",
+    "arabic_new": "شَكࣲّ",
+    "transliteration_old": "šakkin",
+    "transliteration_new": "šakkin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 27,
+    "verse": 66,
+    "word_position": 9,
+    "arabic_old": "شَكٍّ",
+    "arabic_new": "شَكࣲّ",
+    "transliteration_old": "šakkin",
+    "transliteration_new": "šakkin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 34,
+    "verse": 21,
+    "word_position": 16,
+    "arabic_old": "شَكٍّ",
+    "arabic_new": "شَكࣲّ",
+    "transliteration_old": "šakkin",
+    "transliteration_new": "šakkin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 34,
+    "verse": 54,
+    "word_position": 14,
+    "arabic_old": "شَكٍّ",
+    "arabic_new": "شَكࣲّ",
+    "transliteration_old": "šakkin",
+    "transliteration_new": "šakkin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 38,
+    "verse": 8,
+    "word_position": 9,
+    "arabic_old": "شَكٍّ",
+    "arabic_new": "شَكࣲّ",
+    "transliteration_old": "šakkin",
+    "transliteration_new": "šakkin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 40,
+    "verse": 34,
+    "word_position": 10,
+    "arabic_old": "شَكٍّ",
+    "arabic_new": "شَكࣲّ",
+    "transliteration_old": "šakkin",
+    "transliteration_new": "šakkin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 41,
+    "verse": 45,
+    "word_position": 16,
+    "arabic_old": "شَكٍّ",
+    "arabic_new": "شَكࣲّ",
+    "transliteration_old": "šakkin",
+    "transliteration_new": "šakkin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 42,
+    "verse": 14,
+    "word_position": 28,
+    "arabic_old": "شَكٍّ",
+    "arabic_new": "شَكࣲّ",
+    "transliteration_old": "šakkin",
+    "transliteration_new": "šakkin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 44,
+    "verse": 9,
+    "word_position": 4,
+    "arabic_old": "شَكٍّ",
+    "arabic_new": "شَكࣲّ",
+    "transliteration_old": "šakkin",
+    "transliteration_new": "šakkin",
+    "comment": "Diff review: single-char-swap — Swap index 4: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 18,
+    "verse": 26,
+    "word_position": 18,
+    "arabic_old": "وَلِیٍّ",
+    "arabic_new": "وَلِیࣲّ",
+    "transliteration_old": "walīyin",
+    "transliteration_new": "walīyin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 29,
+    "verse": 22,
+    "word_position": 15,
+    "arabic_old": "وَلِیٍّ",
+    "arabic_new": "وَلِیࣲّ",
+    "transliteration_old": "waliyyin",
+    "transliteration_new": "waliyyin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 32,
+    "verse": 4,
+    "word_position": 20,
+    "arabic_old": "وَلِیٍّ",
+    "arabic_new": "وَلِیࣲّ",
+    "transliteration_old": "waliyyin",
+    "transliteration_new": "waliyyin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 42,
+    "verse": 8,
+    "word_position": 17,
+    "arabic_old": "وَلِیٍّ",
+    "arabic_new": "وَلِیࣲّ",
+    "transliteration_old": "waliyyin",
+    "transliteration_new": "waliyyin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 42,
+    "verse": 31,
+    "word_position": 12,
+    "arabic_old": "وَلِیٍّ",
+    "arabic_new": "وَلِیࣲّ",
+    "transliteration_old": "waliyyin",
+    "transliteration_new": "waliyyin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  },
+  {
+    "surah": 42,
+    "verse": 44,
+    "word_position": 7,
+    "arabic_old": "وَلِیٍّ",
+    "arabic_new": "وَلِیࣲّ",
+    "transliteration_old": "waliyyin",
+    "transliteration_new": "waliyyin",
+    "comment": "Diff review: single-char-swap — Swap index 6: Madinah U+08F2 vs Cairo U+064D. | instruction: Mistyping in cairo, madinah is correct"
+  }
+]

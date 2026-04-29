@@ -1,0 +1,19 @@
+[
+  {
+    "surah": 5,
+    "verse": 100,
+    "word_positions": [12, 13],
+    "arabic": ["\u06CC\u064E\u0670\u0653\u0623\u064F\u0648\u06DF\u0644\u0650\u06CC", "\u0671\u0644\u06E1\u0623\u064E\u0644\u06E1\u0628\u064E\u0670\u0628\u0650"],
+    "transliteration": ["yā-ʾuli", "l-ʾalbābi"],
+    "comment": "Source XML placed the boundary mid-phrase: word 12 was يَٰٓأُو۟ (yā-ʾuli) and word 13 was لِيٱلۡأَلۡبَٰبِ. Transliteration already implied the correct split."
+  },
+  {
+    "surah": 21,
+    "verse": 90,
+    "word_positions": [10, 17],
+    "arabic": ["\u0643\u064E\u0627\u0646\u064F\u0648\u0627", "\u0648\u064E\u0643\u064E\u0627\u0646\u064F\u0648\u0627\u06DF"],
+    "transliteration": ["kānū", "wa-kānū"],
+    "comment": "Cairo XML misplaced the leading و: position 10 had وَكَانُوا and position 17 had كَانُوا۟. The printed Cairo 1924 mushaf has them reversed (matching Madinah and the canonical Hafs reading)."
+  }
+]
+
