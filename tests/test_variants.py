@@ -69,7 +69,10 @@ class TestVariantsStructure(unittest.TestCase):
 
     def test_total_word_count(self):
         total = sum(len(v["words"]) for e in data for v in e["variants"])
-        self.assertEqual(total, 531828)
+        # 531830 reflects the current corpus after manual corrections; the
+        # original scrape had 531828. Update this constant when adding or
+        # removing words via fix_variants.py or data corrections.
+        self.assertEqual(total, 531830)
 
     def test_no_empty_word_values(self):
         empty = [
