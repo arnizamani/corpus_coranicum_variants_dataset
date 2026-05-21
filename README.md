@@ -49,7 +49,7 @@ According to ad-Dānī's *at-Taisīr fī l-qirāʾāt as-sabʿ* (11th century CE
 
 - **Total verses**: 6,236 (114 surahs)
 - **Total variants**: 531,832 word entries
-- **Verse numbering variants**: 241 locations across 74 surahs
+- **Verse numbering variants**: 272 locations across 76 surahs
 - **Data sources**: Multiple historical works including:
   - ad-Dānī: *at-Taisīr fī l-qirāʾāt as-sabʿ* (primary source)
   - al-Bannāʾ: *Itḥāf fuḍalāʾ al-bašar*
@@ -59,9 +59,9 @@ According to ad-Dānī's *at-Taisīr fī l-qirāʾāt as-sabʿ* (11th century CE
 
 ## 📍 Verse Numbering Systems
 
-In addition to textual variants, early Islamic scholars developed different systems for counting and dividing Quranic verses (āyāt). This dataset includes **verse ending variants** according to six classical counting systems:
+In addition to textual variants, early Islamic scholars developed different systems for counting and dividing Quranic verses (āyāt). This dataset includes **verse ending variants** according to seven classical counting systems:
 
-### The Six Counting Systems
+### The Seven Counting Systems
 
 | System | Total Verses | Authority | Origin |
 |--------|--------------|-----------|--------|
@@ -70,11 +70,12 @@ In addition to textual variants, early Islamic scholars developed different syst
 | **Madani 2** | 6,217 | Nafi' (d. 169 AH) via Kufi scholars | Medina (last tradition) |
 | **Makki** | 6,210 | Ibn Kathir (d. 120 AH) | Mecca |
 | **Basari** | 6,204 | 'Ata ibn Yasar (d. 102 AH) | Basra, Iraq |
-| **Shami** | 6,226 | Ibn 'Amir (d. 118 AH) | Damascus, Syria |
+| **Dimashqi** | 6,226 | Ibn 'Amir (d. 118 AH) | Damascus, Syria |
+| **Himsi** | 6,230 | Reciters of Homs | Homs, Syria |
 
 These systems trace back to the early Islamic period through authentic chains of narration from the Companions of the Prophet ﷺ. The Kufi system, narrated from 'Ali ibn Abi Talib (d. 40 AH), is used as the reference in this dataset and aligns with modern Hafs numbering.
 
-These systems differ in **241 locations** across **74 surahs**, where scholars disagreed on whether certain phrases constitute verse breaks. The differences typically involve:
+These systems differ in **272 locations** across **76 surahs**, where scholars disagreed on whether certain phrases constitute verse breaks. The differences typically involve:
 
 - Whether the *basmala* (بسم الله الرحمن الرحيم) counts as a verse
 - Division of longer passages into one or two verses
@@ -84,7 +85,7 @@ The **Kufi system** is used as the reference in this dataset, which closely alig
 
 ### Dataset: `ayah_numbering_variants.csv`
 
-This file documents all 241 locations where the six systems differ, with:
+This file documents all 272 locations where the seven systems differ, with:
 - Surah and verse numbers (Kufi/Hafs reference)
 - Word position where the variant occurs
 - Values for each system: `+1` (verse break exists) or `-1` (no verse break)

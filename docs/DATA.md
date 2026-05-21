@@ -14,7 +14,7 @@ corpus_coranicum_variants_dataset/
 │   ├── all_variants_fixed.json         # ~25 MB — complete dataset, all sources, quality-fixed
 │   ├── taisir_variants.csv             # ~4.5 MB — at-Taisīr variants only (primary published CSV)
 │   ├── cairo_quran.json                # ~10 MB — Cairo 1924 reference, verified + normalised
-│   ├── ayah_numbering_variants.csv     # ~11 KB — verse-ending variants across 6 counting systems
+│   ├── ayah_numbering_variants.csv     # ~23 KB — verse-ending variants across 7 counting systems
 │   └── cairo_patches/                  # small datasets consumed by extract_cairo.py
 │       ├── sajda_positions.json
 │       ├── word_boundary_fixes.json
@@ -37,7 +37,7 @@ corpus_coranicum_variants_dataset/
 | `data/all_variants_fixed.json` | ~25 MB | JSON | Complete dataset with all sources and quality fixes applied |
 | `data/taisir_variants.csv` | ~4.5 MB | CSV | Tabular format with **only ad-Dānī's at-Taisīr variants** |
 | `data/cairo_quran.json` | ~10 MB | JSON | Cairo 1924 Quran reference text (Ḥafṣ reading), verified against the Madinah mushaf and normalised — see [Cairo Reference Text Curation](#cairo-reference-text-curation) below |
-| `data/ayah_numbering_variants.csv` | ~11 KB | CSV | Verse ending variants across six classical counting systems |
+| `data/ayah_numbering_variants.csv` | ~23 KB | CSV | Verse ending variants across seven classical counting systems |
 
 **Note**: `data/all_variants.json` (raw scraped data) is not published as it's an intermediate file. Use `all_variants_fixed.json` instead.
 
@@ -50,7 +50,6 @@ corpus_coranicum_variants_dataset/
 | `scripts/scrape.js` | JavaScript | Main scraper (uses Playwright) |
 | `scripts/fix_variants.py` | Python | Data quality fixes for variant readings |
 | `scripts/convert_to_csv.py` | Python | JSON to CSV converter |
-| `scripts/convert_ayah_variants.py` | Python | Builds `data/ayah_numbering_variants.csv` |
 | `scripts/extract_cairo.py` | Python | Extract and normalise the Cairo 1924 text from TEI XML |
 | `scripts/transliterate_to_arabic.py` | Python | Transliteration → Arabic helper (used by tests) |
 | `scripts/normalize_arabic.py` | Python | Arabic Unicode normaliser (helper) |
@@ -169,9 +168,9 @@ Result:
 
 ### Verse Numbering Variants Format
 
-The `ayah_numbering_variants.csv` file documents differences in verse division across six classical counting systems.
+The `ayah_numbering_variants.csv` file documents differences in verse division across seven classical counting systems.
 
-#### The Six Counting Systems
+#### The Seven Counting Systems
 
 | System | Total Verses | Authority | Chain of Narration |
 |--------|--------------|-----------|-------------------|
@@ -180,7 +179,8 @@ The `ayah_numbering_variants.csv` file documents differences in verse division a
 | **Madani 2** | 6,217 | Nafi' (d. 169) | From Abu Jafar Yazid (d. 128) via Kufi scholars |
 | **Makki** | 6,210 | Ibn Kathir (d. 120) | From Mujahid from Ibn 'Abbas from Ubay ibn Ka'b |
 | **Basri** | 6,204 | 'Ata ibn Yasar (d. 102) | Via Asim al-Jahdari from Ayub ibn al-Mutawakkil |
-| **Shami** | 6,226 | Ibn 'Amir (d. 118) | From Abu al-Darda', attributed to 'Uthman ibn 'Affan |
+| **Dimashqi** | 6,226 | Ibn 'Amir (d. 118) | From Abu al-Darda', attributed to 'Uthman ibn 'Affan |
+| **Himsi** | 6,230 | Reciters of Homs | Attributed to the Quran reciters of Homs in Syria |
 
 The Kufi system (6,236 verses) is used as the reference in this dataset and aligns with modern Hafs numbering.
 
@@ -193,8 +193,10 @@ The Kufi system (6,236 verses) is used as the reference in this dataset and alig
 5. **madani2**: Madani al-Akheer system
 6. **makki**: Makki system
 7. **basari**: Basari system
-8. **shami**: Shami system
+8. **dimashqi**: Dimashqi system, often called Shami (Syrian), but Himsi is also Syrian, so Dimashqi is used instead.
 9. **kufi**: Kufi system (same as reference)
+10. **surah_name**: Name of the surah (just for reference)
+11. **last_3_words**: Last three words preceding the exact position for the ayah ending (just for reference)
 
 #### Value Meanings
 
@@ -202,15 +204,16 @@ The Kufi system (6,236 verses) is used as the reference in this dataset and alig
 - **-1**: This system does NOT consider this location a verse ending
 
 The Kufi system is used as the reference, which aligns with modern Hafs numbering.
+Word positions are based on the Cairo dataset (inclued in this repo). If these numberings are used in any other text (such as Madinah Mushaf or other recitations), the words need to be aligned with the Cairo dataset.
 
 #### Example
 
 ```csv
-surah,verse,word_position,madani1,madani2,makki,basari,shami,kufi
-1,1,4,-1,-1,1,-1,-1,1
+surah,verse,word_position,madani1,madani2,makki,basari,dimashqi,kufi,himsi,surah_name,last_3_words
+1,1,4,-1,-1,1,-1,-1,1,-1,الفاتحة,الله الرحمن الرحيم
 ```
 
-This means at Surah 1, Verse 1 (Kufi), word position 4:
+This means at Surah 1, Verse 1 (Kufi), after word 4:
 - Makki and Kufi systems: verse break exists (+1)
 - Other systems: no verse break (-1)
 
@@ -218,11 +221,11 @@ Note that the issue of Basmala in Surah al-Fatihah is a special case. For the Ma
 
 #### Coverage
 
-- **Total variants**: 241 locations
-- **Surahs affected**: 74 out of 114
-- **Systems**: 6 classical counting traditions
+- **Total variants**: 272 locations
+- **Surahs affected**: 79 out of 114
+- **Systems**: 7 classical counting traditions
 
-These differences have full coverage of the Quranic text. All other positions of end-of-ayah are in complete agreement between these six systems.
+These differences have full coverage of the Quranic text. All other positions of end-of-ayah are in complete agreement between these seven systems.
 
 ## Cairo Reference Text Curation
 

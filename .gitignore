@@ -57,7 +57,7 @@ tmp/
 
 # Raw scraped data (not needed in repo - use fixed version)
 data/all_variants.json
-
+data/ayah_numbering_variants.xlsx
 # Progress checkpoints
 progress_*.json
 data/multiple_variants.csv
